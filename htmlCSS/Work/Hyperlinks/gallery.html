@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cats Gallery</title>
+    <style>
+        html {
+            background-color: rgb(255, 247, 235);
+
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 0 auto;
+            text-align: center; 
+        }
+
+        .gal {
+            width: 634px;
+            /* на отметке 600 смещает ПРАВЫЙ border влево, оставляя ЛЕВЫЙ на месте */
+            border: 1px solid #d4d1ec;
+            /*при состыковки "граница-граница", данный цвет сделал получившиеся границы, а именно в ряду с котами "не жирными". */
+            margin-top: 40px;  /* перемещаются большая и маленькие картинки вниз */
+            margin-left: 400px; /*смещается  большая картинка относительно маленьких влево */
+            padding-bottom: 80px;  /* НИЖНЯЯ ГРАНИЦА большой картинки отдалилась от самой картинки */
+
+        }
+
+        h1 {
+            padding-bottom: 80px;
+            /* отдаляет картинку от заголовка вниз */
+            margin-top: 60px;
+            /* отдаляет заголовок вниз от границы */
+        }
+
+        img {
+            border: 1px solid #d4d1ec;
+            padding: 20px;
+        }
+
+        li {
+            float: left;
+            /* маленькие картинки из расположения столбцом переместились в один ряд и сомкнулись  */
+        }
+
+        .cat {
+            margin: 0 auto;
+            width: 816px;
+        } /*  значения margin: 0 auto + width, работая вместе перемещают div (картинки) влево или вправо, регулируя по центру  */
+
+        ul {
+            list-style-type: none;   
+            margin: 0;              /* сомкнуло ряд картинок с одной большой */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="gal">
+        <h1>CATS GALLERY</h1>
+        <iframe src="icons_cat/cat_box_256.png" frameborder="0" height="256px" width="256px" name="cat"></iframe>
+    </div>
+    <div class="cat">
+        <ul>
+            <li><a href="icons_cat/cat_box_256.png" target="cat"><img src="icons_cat/cat_box_64.png"
+                        alt="cat_box" /></a></li>
+            <li><a href="icons_cat/cat_cage_256.png" target="cat"><img src="icons_cat/cat_cage_64.png"
+                        alt="cat_cage" /></a></li>
+            <li><a href="icons_cat/cat_clean_256.png" target="cat"><img src="icons_cat/cat_clean_64.png"
+                        alt="cat_clean" /></a></li>
+            <li><a href="icons_cat/cat_eyes_256.png" target="cat"><img src="icons_cat/cat_eyes_64.png"
+                        alt="cat_eyes" /></a></li>
+            <li><a href="icons_cat/cat_purr_256.png" target="cat"><img src="icons_cat/cat_purr_64.png"
+                        alt="cat_purr" /></a></li>
+            <li><a href="icons_cat/cat_tied_256.png" target="cat"><img src="icons_cat/cat_tied_64.png"
+                        alt="cat_tied" /></a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

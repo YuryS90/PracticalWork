@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lorem site orig</title>
+    <style>
+
+        body {
+           margin: 0 auto;
+           background-color: rgb(173, 173, 173);
+        }
+        /*  -----------------------------------------header + main + aside -------------------------------------------------- */
+        section {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+        }
+
+        /*  ----------------------------------------.container1 шапки---------------------------------------------------- */
+        .container1 {
+            background-color: rgb(65, 65, 65); /*Делаем на всю ширину экрана браузера*/
+            width: 100%; /*Вся ширина родителя шапки*/
+        }
+
+        /*  -----------------------------------------------ШАПКА САЙТА ------------------------------------------------------------ */
+
+        header {
+            min-width: 600px;
+            max-width: 1200px; /*Это означает, что headery (logo + nav) задали ширину 1200рх (см. Инспектор). 
+            И уменьшение экрана браузера, начиная с ширины 1200рх и заканчивая 600рх - сжимается текст (контент),меньше 600 сжатие прекращается.*/
+            margin: 0 auto;  /* Центрирование 1200рх, оставляя одинаковые отступы слева и справа*/
+            background-color: rgb(65, 65, 65); /*Этот bgc устнавливается только на ширину 1200рх. При уменьшении ширины экрана браузера,
+            bgc шапки, будет оставаться неизменным*/
+            height: 3.5rem; /*высота шапки*/
+            display: flex; /* .logo + nav */
+            flex-flow: row nowrap;
+            align-items: center; /* центровка .logo + nav по второстепенной оси  */
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 3rem;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            float: left; /* li в 1 ряд*/
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        nav li a {
+            color: rgb(231, 231, 231);
+            text-decoration: none;
+            padding: 0 1.5rem; /* отступы между li */
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        /*  -------------------------------.container2 (main + aside) ----------------------------------------------------------- */
+        .container2 {
+            margin: 0 auto;
+            min-width: 600px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgb(173, 173, 173);
+        }
+
+
+        /*  -------------------------------------------main + aside------------------------------------------------------------ */
+
+        .content {
+            /* min-width: 600px; */
+            /* max-width: 1200px; */
+            /* margin: 0 auto; */
+            overflow-x: auto;
+            display: grid;
+            grid-template-areas:
+                                "con eve"
+                                "con info"
+                                "con .";
+            grid-template-columns: 5fr 2fr;
+            gap: 1rem;
+            margin: 2.3rem 0 1rem 0;
+        }
+
+        /*  ----------------------------------------------main------------------------------------------------------------ */
+
+        main {
+            grid-area: con;
+            background-color: #fafae6;
+        }
+
+        main img {
+            width: 100%; /* Придаёт гибкость всему mainу */
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            margin: 0;
+            padding-left: 2.5rem;
+            padding-top: 1.7rem;
+        }
+
+        .data {
+            padding-left: 2.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.4;
+        }
+
+        .text {
+            padding: 0 2.5rem 1rem 2.5rem;
+        }
+
+        /*  ----------------------------------------------aside (events + info)-------------------------------------------------- */
+
+        aside {
+            background-color: #fafae6;
+        }
+
+        /*  ----------------------------------------------events-------------------------------------------------- */
+
+        .events {
+            grid-area: eve;
+            padding-bottom: 2rem;
+        }
+
+        .flex {
+            display: flex;
+            padding: 0 1rem;
+            padding-right: 4rem;
+            padding-bottom: 1.1rem;
+        }
+
+        .flex img {
+            width: 2.6rem;
+        }
+
+        h4 {
+            padding-left: 1rem;
+            padding-top: 1rem;
+            margin-bottom: 2.3rem;
+        }
+
+        .div-calendar {
+            align-self: center;
+        }
+
+        .div-text {
+            padding-left: 1.5rem;
+        }
+
+
+        /*  ----------------------------------------------info-------------------------------------------------- */
+
+        .info {
+            grid-area: info;
+            margin: 0;
+            padding: 1.2rem 1rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container1">
+            <header>
+                <div class="logo">Lorem site</div>
+                <nav>
+                    <ul>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Events</a></li>
+                        <li><a href="">Courses</a></li>
+                        <li><a href="">Jobs</a></li>
+                        <li><a href="">Tests</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="container2">
+            <div class="content">
+                <main>
+                    <h1>What is Lorem Ipsum?</h1>
+                    <p class="data">30/03/2019 11:20</p>
+                    <img src="icons/html5img.png" alt="">
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit explicabo nobis minima
+                        aliquid
+                        pariatur
+                        maiores
+                        obcaecati perferendis, ipsam hic porro corrupti minus nulla enim aliquam similique ducimus
+                        molestiae.
+                        Ullam,
+                        et!
+                        Quia dolore tempore doloribus blanditiis facilis eius quod, nesciunt veritatis voluptatibus,
+                        tempora
+                        ipsum
+                        odit vero, omnis laudantium illum a obcaecati at. Delectus beatae voluptates vitae a architecto
+                        esse
+                        asperiores rem!
+                        Aliquid, laborum, pariatur, hic nam nesciunt voluptas modi eveniet id unde reprehenderit eius.
+                        Maxime
+                        labore, qui rerum iste explicabo quas? Dignissimos sunt architecto veritatis unde voluptate sed
+                        repellat
+                        doloribus hic?
+                    </p>
+                </main>
+
+                <aside class="events">
+                    <h4>Events</h4>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_7.png" alt=""></div>
+                        <div class="div-text">Donec ut nisi ullamcorper, ultrices neque accumsan, maximus justo</div>
+                    </div>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_19.png" alt=""></div>
+                        <div class="div-text">Vivamus fringilla ligula eu nunc tincidunt, in dignissim augue rutrum</div>
+                    </div>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_27.png" alt=""></div>
+                        <div class="div-text">Quisque vel quam fermentum velit luctus pulvinar eget et leo</div>
+                    </div>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_7.png" alt=""></div>
+                        <div class="div-text">Curabitur eleifend quam pulvinar nibh euismod mollis</div>
+                    </div>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_19.png" alt=""></div>
+                        <div class="div-text">Duis et metus finibus, feugiat augue non, eleifend nisl</div>
+                    </div>
+                    <div class="flex">
+                        <div class="div-calendar"><img src="icons/calendar_27.png" alt=""></div>
+                        <div class="div-text">Duis temper magna in interdum viverra</div>
+                    </div>
+                </aside>
+
+                <aside class="info">
+                    <div>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                        velit..."</div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

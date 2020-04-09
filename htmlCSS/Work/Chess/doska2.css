@@ -1,0 +1,64 @@
+body {
+    background-color: wheat;
+}
+
+table {
+    margin: 0 auto;
+    margin-top: 40px;
+
+    border-spacing: 0; /* Убирает границы */
+
+}
+
+.doska tr:not(:first-child) td, /* bgc для всех строк и столбцов, кроме 1-й (первой) и 10-й (последней) строки */
+.doska tr:not(:last-child) td {
+    background-color: rgb(9, 167, 93);
+}
+
+.doska tr:first-child td,    /*Для 1-й и 10-й строки, включая столбцы*/
+.doska tr:last-child td { 
+    background: rgb(185, 51, 51);
+
+    text-align: center;
+
+    height: 50px;
+}
+
+.doska tr td:first-child, /*Для 1-го и 10-го столбца, включая строки*/
+.doska tr td:last-child {
+    background-color: rgb(185, 51, 51);
+
+    text-align: center;
+
+    height: 50px;
+    width: 40px;
+}
+
+/* Для всех нечётных строк, кроме 1-й строки и для всех нечетных стобцов, кроме первого столбца */
+.doska tr:nth-child(odd):not(:first-child) td:nth-child(odd):not(:first-child),
+/* А также для всех чётных строк, кроме 10-й строки и для всех четных стобцов, кроме 10-го столбца */
+.doska tr:nth-child(even):not(:last-child) td:nth-child(even):not(:last-child) {
+    background-color: black;
+
+    width: 100px;
+    height: 100px; 
+
+    transition: border-radius .1s linear; 
+}
+
+
+.doska tr:nth-child(odd):not(:first-child) td:nth-child(odd):not(:first-child):hover,
+.doska tr:nth-child(even):not(:last-child) td:nth-child(even):not(:last-child):hover,
+.doska tr:nth-child(odd):not(:first-child) td:nth-child(even):not(:last-child):hover,
+.doska tr:nth-child(even):not(:last-child) td:nth-child(odd):not(:first-child):hover {
+
+    border-radius: 50%;
+    transition-property: border-radius;
+    transition-duration: 2s;
+}
+
+
+
+
+
+

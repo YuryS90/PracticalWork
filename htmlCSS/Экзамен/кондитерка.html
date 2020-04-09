@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- мета-тег- используется для работы с мобильными устройствами, планшетами и тд. width=device-width - ширина нашего сайта будет равна
+ширине девайса, с которого зашёл посетитель. initial-scale=1 - для того чтобы наш сайт отображался таким какой он есть -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="кондитер.css">
+    <title>Кондитерка</title>
+
+<!-- Загрузка jquery  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <!-- ==============================================Sprite=================================================-->
+    <!-- Для работы с картинками в svg формате =================================================-->
+
+    <svg style="display: none;">
+
+        <symbol id="facebook" viewBox="0 0 408.788 408.788">
+            <g>
+                <path d="M353.701,0H55.087C24.665,0,0.002,24.662,0.002,55.085v298.616c0,30.423,24.662,55.085,55.085,55.085
+                h147.275l0.251-146.078h-37.951c-4.932,0-8.935-3.988-8.954-8.92l-0.182-47.087c-0.019-4.959,3.996-8.989,8.955-8.989h37.882
+                v-45.498c0-52.8,32.247-81.55,79.348-81.55h38.65c4.945,0,8.955,4.009,8.955,8.955v39.704c0,4.944-4.007,8.952-8.95,8.955
+                l-23.719,0.011c-25.615,0-30.575,12.172-30.575,30.035v39.389h56.285c5.363,0,9.524,4.683,8.892,10.009l-5.581,47.087
+                c-0.534,4.506-4.355,7.901-8.892,7.901h-50.453l-0.251,146.078h87.631c30.422,0,55.084-24.662,55.084-55.084V55.085
+                C408.786,24.662,384.124,0,353.701,0z"/>
+            </g>
+        </symbol>
+
+        <symbol id="twitter" viewBox="0 0 449.956 449.956">
+            <g>
+                <path d="M449.956,85.657c-17.702,7.614-35.408,12.369-53.102,14.279c19.985-11.991,33.503-28.931,40.546-50.819
+                    c-18.281,10.847-37.787,18.268-58.532,22.267c-18.274-19.414-40.73-29.125-67.383-29.125c-25.502,0-47.246,8.992-65.24,26.98
+                    c-17.984,17.987-26.977,39.731-26.977,65.235c0,6.851,0.76,13.896,2.284,21.128c-37.688-1.903-73.042-11.372-106.068-28.407
+                    C82.46,110.158,54.433,87.46,31.403,59.101c-8.375,14.272-12.564,29.787-12.564,46.536c0,15.798,3.711,30.456,11.138,43.97
+                    c7.422,13.512,17.417,24.455,29.98,32.831c-14.849-0.572-28.743-4.475-41.684-11.708v1.142c0,22.271,6.995,41.824,20.983,58.674
+                    c13.99,16.848,31.645,27.453,52.961,31.833c-7.995,2.091-16.086,3.138-24.269,3.138c-5.33,0-11.136-0.475-17.416-1.42
+                    c5.9,18.459,16.75,33.633,32.546,45.535c15.799,11.896,33.691,18.028,53.677,18.418c-33.498,26.262-71.66,39.393-114.486,39.393
+                    c-8.186,0-15.607-0.373-22.27-1.139c42.827,27.596,90.03,41.394,141.612,41.394c32.738,0,63.478-5.181,92.21-15.557
+                    c28.746-10.369,53.297-24.267,73.665-41.686c20.362-17.415,37.925-37.448,52.674-60.097c14.75-22.651,25.738-46.298,32.977-70.946
+                    c7.23-24.653,10.848-49.344,10.848-74.092c0-5.33-0.096-9.325-0.287-11.991C421.785,120.202,437.202,104.306,449.956,85.657z"
+                />
+            </g>
+        </symbol>
+
+        <symbol id="linkedin" viewBox="0 0 512 512">
+            <g>
+                <path d="m160.007812 423h-70v-226h70zm6.984376-298.003906c0-22.628906-18.359376-40.996094-40.976563-40.996094-22.703125
+                    0-41.015625 18.367188-41.015625 40.996094 0 22.636718 18.3125 41.003906 41.015625 41.003906 22.617187 0 40.976563-18.367188 
+                    40.976563-41.003906zm255.007812 173.667968c0-60.667968-12.816406-105.664062-83.6875-105.664062-34.054688 0-56.914062 17.03125-66.246094 
+                    34.742188h-.066406v-30.742188h-68v226h68v-112.210938c0-29.386718 7.480469-57.855468 43.90625-57.855468 35.929688 0 37.09375 33.605468 
+                    37.09375 59.722656v110.34375h69zm90 153.335938v-392c0-33.085938-26.914062-60-60-60h-392c-33.085938 0-60 26.914062-60 60v392c0 33.085938 
+                    26.914062 60 60 60h392c33.085938 0 60-26.914062 60-60zm-60-412c11.027344 0 20 8.972656 20 20v392c0 11.027344-8.972656 
+                    20-20 20h-392c-11.027344 0-20-8.972656-20-20v-392c0-11.027344 8.972656-20 20-20zm0 0"/>
+            </g>
+
+        </symbol>
+    </svg>
+
+    <!-- ==================================================header======================================================== -->
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="images1/chef.png" alt="">
+                    <div class="header__logo__logo">Confectioner.by</div>
+                </div>
+                <nav class="nav">
+                    <a class="nav__link" href="#intro">Главная</a>
+                    <a class="nav__link" href="#features">О Нас</a>
+                    <a class="nav__link" href="#catalog">Каталог</a>
+                    <a class="nav__link" href="#price">Цены</a>
+                    <a class="nav__link" href="#video">Видео</a>
+                    <a class="nav__link" href="#footer">Контакты</a>
+                </nav>
+
+                <button class="burger" type="button">
+                    <span class="burger__item">Menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<!-- ==================================================intro======================================================== -->
+    <div class="intro" id="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <div class="intro__text">
+                    <h1>Натуральные и эксклюзивные <span>торты и копкейки на заказ</span></h1>
+                    <h3>Для любого торжества!</h3>   
+                </div>
+                <div class="intro__form">
+                   <form action="" method="GET">
+                        <p>Сделать заказ</p>
+                        <input type="text" name="username" placeholder="Ваше имя">
+                        <input type="tel" name="tel" placeholder="Ваш номер телефона">
+                        <a class="btn btn--red" href="#">отправить</a> 
+                   </form>
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+
+    <!-- ==================================================О нас======================================================== -->
+
+    <div class="container">
+        <div class="features" id="features">
+            
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Многолетний опыт</h4>
+                <div class="features__text">Торты на заказ мы изготавливаем уже на протяжении 15 лет. 
+                Каждый торт и копкейк – это маленькое произведение искусства, выполненное с душой специально для Вашего торжества.</div>
+            </div>
+
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Натуральные ингридиенты</h4>
+                <div class="features__text">Для приготовления тортов и копкейков мы используем только свежие и натуральные продукты.
+                </div>
+            </div>
+
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Индивидуальный подход</h4>
+                <div class="features__text">Торты на заказ выпекаем по Вашему желанию с(без) изменением(ия) классической рецептуры. Придадим торту любое дизайнерское решение.     
+                </div>
+            </div>
+
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Своевременность</h4>
+                <div class="features__text">Мы пунктуальны и ценим каждого клиента. Не берем в работу больше заказов, чем реально можем выполнить.
+                </div>
+            </div>
+    
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Доступные цены</h4>
+                <div class="features__text">Стоимость наших кондитерских изделий очень доступная, можно подобрать торт абсолютно под любой бюджет:
+                    от небольших по весу лакомств, до многоуровневых с эксклюзивными начинками и особым дизайнерским оформлением.
+                </div>
+            </div>
+    
+            <div class="features__item">
+                <img class="features__icon" src="images1/success.png" alt="">
+                <h4 class="features__title">Доставка</h4>
+                <div class="features__text">Вы можете самостоятельно забрать свой заказ, но и мы стремимся предоставить максимальный сервис,
+                    поэтому осуществляем доставку заказов по городу до подъезда Вашего дома.
+                </div>
+            </div>
+        </div>  <!-- /.features  -->
+    </div> <!-- /.container  -->
+
+    <!-- ==================================================Каталог======================================================== -->
+
+
+    <div class="catalog" id="catalog">
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/1.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title">Свадебные <span>торты</span></div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/2.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title">Детские <span>торты</span></div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/3.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title"><span>Торты</span> на годовщину</div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/4.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title"><span>Торты</span> на 1 годик</div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/5.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title">Корпоративные <span>торты</span></div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/6.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title"><span>Торты</span> на юбилей</div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/7.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title"><span>Торты</span> POP-ART</div>
+            </div>
+        </div>
+
+        <div class="catalog__item">
+            <img class="catalog__photo" src="images1/торты/8.jpg" alt="">
+            <div class="catalog__content">
+                <div class="catalog__title"><span>Копкейки</span></div>
+            </div>
+        </div>
+    </div> <!-- /.catalog -->
+
+    <!-- ==================================================Цены======================================================== -->
+
+    <div class="price" id="price">
+        <div class="container">
+            <div class="price__inner">
+
+                <div class="price__item">
+                    <div class="item__block block1">
+                        <h3>Свадебные торты</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div>  <!--/.price__item (1-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block2">
+                        <h3>Детские торты</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>     
+                </div> <!--/.price__item (2-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block3">
+                        <h3>Торты на годовщину</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>   
+                </div> <!--/.price__item (3-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block4">
+                        <h3>Торты на 1 годик</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div> <!--/.price__item (4-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block5">
+                        <h3>Корпоративные торты</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div> <!--/.price__item (5-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block6">
+                        <h3>Торты на юбилей</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div> <!--/.price__item (6-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block7">
+                        <h3>Торты POP-ART</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div> <!--/.price__item (7-й)-->
+
+                <div class="price__item">
+                    <div class="item__block block8">
+                        <h3>Копкейки</h3>
+                        <p>от</p>
+                        <p>28 руб</p> 
+                        <p>за 1кг</p>
+                        <p>подробнее</p>
+                    </div>
+                </div> <!--/.price__item (8-й)-->
+
+            </div> <!-- /.price__inner-->
+        </div>  <!-- /.container -->
+    </div> <!-- /.price -->
+
+    <!-- ==================================================video======================================================== -->
+
+    <div class="video" id="video">
+        <div class="video__item">
+            <div class="video__youtube">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/BqmSw1ZKgbw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+            </div>
+            <div class="video__content">
+                <div class="video__text">"Для Вас мы делаем каждое изделие с душой..."</div>
+            </div>
+        </div> <!-- /.video__item--> 
+    </div>  <!-- /.video--> 
+
+    <!-- ==================================================FOOTER======================================================== -->
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__inner">
+
+                <div class="footer__block">
+                    <h4 class="footer__title">Наш адрес и режим работы</h4>
+                    <address class="footer_address">
+                        <div>г. Витебск ул. Титова 1</div>
+                        <div>210000</div>
+                        <div>с 9:00-21:00 (без выходных)</div>
+                    </address>
+                </div> <!--/.footer__block (1)--> 
+
+                <div class="footer__block">
+                   <h4 class="footer__title">Поделиться</h4>
+                    <div class="social">  
+                        <a class="social__item" href="#" target="_blank"> 
+                            <svg class="social__icon">
+                                <use xlink:href="#facebook"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item" href="#" target="_blank">
+                            <svg class="social__icon">
+                                <use xlink:href="#twitter"></use>
+                            </svg>
+                        </a>
+                        <a class="social__item" href="#" target="_blank">
+                            <svg class="social__icon">
+                                <use xlink:href="#linkedin"></use>
+                            </svg>
+                        </a>
+                    </div>    <!--/.social--> 
+                </div> <!--/.footer__block (2)--> 
+
+                <div class="footer__block">
+                    <h4 class="footer__title">Контакты</h4>
+                    <div class="footer__text">
+                        <p>+375 29 999 99 99 (MTS)</p>
+                        <p>+375 44 999 99 99 (VELKOM)</p>
+                        <p>+375 25 999 99 99 (Life)</p>
+                        <p>e-mail: confectionerby@mail.ru </p>
+                    </div>
+
+                </div> <!--/.footer__block (3)-->                
+            </div> <!-- /.footer__inner --> 
+        </div> <!-- /.container -->   
+</body>
+</html>

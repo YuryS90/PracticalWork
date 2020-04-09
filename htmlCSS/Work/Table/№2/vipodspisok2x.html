@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Многоуровневый список</title>
+    <style>
+        html {
+            background-color: rgb(255, 245, 233);
+        }
+
+        #menu {
+            padding: 0;
+            margin: 0;
+            font-family: Verdana;
+        }
+
+        /*Ш 1. Делаем главный список(ГС) */
+        /*Ш 2. 1-й выпадающий список */
+        /*Ш 2. 2-й выпадающий список */
+
+        #menu li { /*Селектор для ГС */
+            list-style-type: none;
+            float: left; /* ГС выстроился в горизонтальную линию */
+            height: 30px; /* устанавливаем высоту, чтобы ГС был в её середине */
+            width: 150px; /* устанавливаем ширину для каждого пункта ГС. Теперь каждый пункт ГС имеет высоту 30px и ширину 150px*/
+            text-align: center; /* В этом прямоугольнике, 150х30, выравниваем текст по центру  */
+            background-color: rgb(104, 184, 140);
+            position: relative; /*Для будущего выравнивания 1-го выпад. списка */
+            padding: 0;
+            margin: 0; /*Для слитного расположения пунктов*/
+            padding-top: 12px; /* background делаем равномерным к тексту. Общая высота получилась 42рх */
+            border-right: 1px solid rgb(94, 167, 126);
+            border-left: 1px solid rgb(94, 167, 126);
+        }
+
+        #menu li ul { /*Селектор для 1-го выпадающего списка (общие правила)*/
+            list-style-type: none;
+            position: absolute; /*Выравнивание относительно пункта Categories */
+            padding: 0; /*Выравнивание относительно пункта Categories*/
+            left: -1px; /*Выравнивание относительно пункта Categories */
+            top: 42px; /*Выравнивание относительно пункта Categories */
+            width: 150px; 
+            display: none; /*По умолчанию, 1-й выпадающий список нераскрыт */
+        }
+
+        #menu li ul li { /*Селектор для 1-го вып. списка*/
+            float: none; 
+            height: 30px; /*каждый пункт 1-го списка будут иметь такие же размеры 150х30*/
+            margin: 0; /*Для слитного расположения пунктов*/
+            width: 150px; /*Если нужно чтобы ширина была одинаковой как у ГС*/
+            text-align: center; 
+            border-top: 1px solid rgb(94, 167, 126);  
+            border-bottom: 1px solid rgb(94, 167, 126); 
+        }
+
+        #menu li a { /*Селектор для всех слов списка*/
+            display: block; 
+            width: 150px; 
+            height: 30px; 
+            color: white;
+            text-decoration: none;
+        }
+
+        #menu li:hover ul {
+            display: block; /*При наведении мыши на пункт Categories, выпадает 1-й список */
+        }
+
+        #menu li:hover { /* ГС */
+            background: rgb(76, 129, 100);
+        }
+
+        #menu li ul li ul { /*Селектор для 2-го выпадающего списка*/
+            left: 150px; /*2-й уровень будет выпадать влевую сторону */
+            top: 0; /*top 0, для того чтобы 2-й список выпадал из пункта Woomen*/
+        }
+
+        #menu li ul li ul li {
+            display: none; /*По умолчанию, 2-й выпадающий список нераскрыт, когда раскрыт 1-й */
+        }
+
+        #menu li ul li:hover ul li {
+            display: block; /*При наведении мыши на 1-й вып. список пункт Woomen: 2-й список выпадает */
+        }
+
+        #spisok {
+            width: 650px;
+            height: 50px;
+            margin-bottom: 35px;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+
+        .content {
+            width: 1000px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="spisok">
+        <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Categories</a>
+                <!-- первый выпадающий уровень в разделе Categories-->
+                <ul>
+                    <li><a href="#">Man</a></li>
+                    <li><a href="#">Woomen</a>
+                        <!-- второй выпадающий уровень в разделе Woomen-->
+                        <ul>
+                            <li><a href="#">Dress</a></li>
+                            <li><a href="#">Pants</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kids</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacs</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, autem similique! Ipsam tenetur
+            voluptatibus autem, ducimus atque dignissimos quos explicabo tempora aperiam. Dicta natus quisquam assumenda
+            magni facilis nisi quidem.
+            Enim odit porro unde beatae! At consectetur tenetur perspiciatis illum illo dolores quas inventore veniam
+            dignissimos pariatur quibusdam aliquam veritatis animi a accusamus praesentium, vel, maxime recusandae,
+            repellendus mollitia dolorum.
+            Soluta possimus optio similique iusto dolor dicta officia, quis ratione nam perspiciatis aliquam
+            praesentium, esse rerum nobis illo tempore at voluptas alias doloremque culpa minima est. Omnis praesentium
+            deleniti possimus!
+            Ducimus numquam assumenda non quam culpa amet, autem vitae esse vel totam sit itaque repudiandae tenetur
+            quisquam dolorum facilis ullam quia error ab velit in. Qui aspernatur nemo velit facere.
+            Alias voluptates corporis quisquam vel facere, quam quidem molestiae quae blanditiis, officiis laudantium
+            voluptate aliquam, numquam magnam saepe magni recusandae dolores unde commodi distinctio non incidunt
+            tempore fuga! Odit, veritatis.
+        </p>
+    </div>
+</body>
+
+</html>

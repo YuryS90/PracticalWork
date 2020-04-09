@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex-блоки</title>
+    <style>
+        body, html {
+            background-color: rgb(245, 240, 230);
+            width: 100%; /*Ш1.1*/ 
+            margin: 0 auto;
+
+        }
+        
+        .container {
+            max-width: 1000px; /*Ш1.2 100px (menu-item) + 900px - это 100% (.content)*/
+            min-width: 650px; 
+            margin: 2rem auto;
+            display: flex;  /*Ш2 .menu + .content встали по главной оси Х (row)*/
+        }
+
+        .content {
+            width: 100%; /*Ш1.3*/ 
+            display: flex; /*Ш3 для того чтобы все три .text встали по одной главной оси Х*/ 
+            flex-wrap: wrap; /*Ш3.1*/
+            justify-content: space-around; /*Ш3.2*/  
+            background-color: rgb(77, 77, 77); /*Ш4.1*/
+            color: white; /*Ш4.2*/
+            padding-top: 40px;  /*Ш4*/ 
+        }
+
+        .text {
+            width: 30%; /*Ш1.4 Устанавливаем гибкую ширину от 100%. Три блока шириной по 30% итого 90%, где 10% это отступы*/
+        }
+
+        .text img {
+            width: 100%; /*Ш1.5 Картинки займут всю ширину блоков (.text). Делаем гибкую (%) ширину, для того чтобы при уменьшении экрана 
+            происходило сжатие картинок */
+        }
+
+        .menu-item {
+            width: 100px; /*Ш1.6 Делаем фиксированную (px) ширину, для того чтобы при уменьшении экрана оно не сжималось */
+            background-color: rgb(146, 146, 146); /*Ш6 ЧТобы наглядно видеть блок. Высота растянута*/
+            color: white; /*Ш5*/
+            align-self: flex-start; /*Ш6 Расположение menu сверху + укоротился background под tab*/   
+        }
+
+        .menu .tab:hover {
+            background-color: rgb(77, 77, 77); /*Ш7 Для удобства форматирования ))*/
+        }
+
+        .tab {
+            width: 100px; /*Ш1.7*/
+            height: 52px;  /*Ш8*/
+            text-align: center; /*Ш9 позиционирую Tab 1-3 по горизонтали*/
+            line-height: 312%; /*Ш10 позиционирую Tab 1-3 по вертикали*/     
+        }
+
+        .tab1 {
+            background-color: rgb(77, 77, 77);
+        }
+
+        .tab2 {
+            border-bottom: 1px solid #ccc; 
+            border-top: 1px solid #ccc; 
+        }
+
+        h4 {
+            margin: 0;
+            margin-top: 1rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu-item menu">
+            <div class="tab tab1">Tab 1</div>
+            <div class="tab tab2">Tab 2</div>
+            <div class="tab">Tab 3</div>
+        </div>
+        <div class="content">
+            <div class="text">
+                <img src="icons/350x220.png" alt="">
+                <h4>Header 1</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quas libero consequuntur autem
+                    voluptates deleniti veritatis! Quas eligendi accusantium debitis nulla? 
+                </p>
+            </div>
+            <div class="text">
+                <img src="icons/350x220.png" alt="">
+                <h4>Header 2</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quas libero consequuntur autem
+                    voluptates deleniti veritatis! Quas eligendi accusantium debitis nulla? Numquam laborum maiores
+                    impedit, quas itaque quae deleniti error.
+                </p>
+            </div>
+            <div class="text">
+                <img src="icons/350x220.png" alt="">
+                <h4>Header 3</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quas libero consequuntur autem
+                    voluptates deleniti veritatis! Quas eligendi accusantium debitis nulla? 
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

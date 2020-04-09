@@ -1,0 +1,31 @@
+h1,h2 {
+    text-align: center;
+}
+.font {
+    font-family: serif;
+    margin: 0% 22.6%;
+}
+.col {
+    background-color: rgb(224, 217, 217);
+    color: lightcoral;
+    font-size: 15px;
+}
+.doc {
+    font-family: monospace;
+    background-color: rgb(224, 217, 217);
+    color: rgb(192, 109, 109);
+    font-size: 14px;
+}
+html {
+    background-color: rgb(255, 245, 232);
+}
+.black {
+    color: black;
+}
+.px {
+    font-size: 11.5px;
+}
+.co {
+    background-color: rgb(224, 217, 217);
+    color: darkcyan;
+}

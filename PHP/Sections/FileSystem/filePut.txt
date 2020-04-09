@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PHP: fputs - Manual </title>
+
+ <link rel="shortcut icon" href="https://www.php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="https://www.php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="https://www.php.net/manual/en/function.fputs.php">
+ <link rel="shorturl" href="https://www.php.net/fputs">
+ <link rel="alternate" href="https://www.php.net/fputs" hreflang="x-default">
+
+ <link rel="contents" href="https://www.php.net/manual/en/index.php">
+ <link rel="index" href="https://www.php.net/manual/en/ref.filesystem.php">
+ <link rel="prev" href="https://www.php.net/manual/en/function.fputcsv.php">
+ <link rel="next" href="https://www.php.net/manual/en/function.fread.php">
+
+ <link rel="alternate" href="https://www.php.net/manual/en/function.fputs.php" hreflang="en">
+ <link rel="alternate" href="https://www.php.net/manual/pt_BR/function.fputs.php" hreflang="pt_BR">
+ <link rel="alternate" href="https://www.php.net/manual/zh/function.fputs.php" hreflang="zh">
+ <link rel="alternate" href="https://www.php.net/manual/fr/function.fputs.php" hreflang="fr">
+ <link rel="alternate" href="https://www.php.net/manual/de/function.fputs.php" hreflang="de">
+ <link rel="alternate" href="https://www.php.net/manual/ja/function.fputs.php" hreflang="ja">
+ <link rel="alternate" href="https://www.php.net/manual/ro/function.fputs.php" hreflang="ro">
+ <link rel="alternate" href="https://www.php.net/manual/ru/function.fputs.php" hreflang="ru">
+ <link rel="alternate" href="https://www.php.net/manual/es/function.fputs.php" hreflang="es">
+ <link rel="alternate" href="https://www.php.net/manual/tr/function.fputs.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="/cached.php?t=1539771603&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/cached.php?t=1539765004&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/cached.php?t=1540425603&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/cached.php?t=1540425603&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script>
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="https://www.php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script src="https://www.php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base href="https://www.php.net/manual/en/function.fputs.php">
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="/" class="brand"><img src="/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="/downloads">Downloads</a></li>
+      <li class="active"><a href="/docs.php">Documentation</a></li>
+      <li class=""><a href="/get-involved" >Get Involved</a></li>
+      <li class=""><a href="/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<div class="headsup"><a href='/index.php#id2020-01-23-3'>PHP 7.3.14 Released</a></div>
+<nav id="trick"><div><dl>
+<dt><a href='/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='/manual/en/security.php'>Security</a></dt>
+	<dd><a href='/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='/manual/en/features.php'>Features</a></dt>
+	<dd><a href='/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="function.fread.php">
+          fread &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="function.fputcsv.php">
+          &laquo; fputcsv        </a>
+      </div>
+          <ul>
+            <li><a href='index.php'>PHP Manual</a></li>      <li><a href='funcref.php'>Function Reference</a></li>      <li><a href='refs.fileprocess.file.php'>File System Related Extensions</a></li>      <li><a href='book.filesystem.php'>Filesystem</a></li>      <li><a href='ref.filesystem.php'>Filesystem Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/function.fputs.php' selected="selected">English</option>
+            <option value='pt_BR/function.fputs.php'>Brazilian Portuguese</option>
+            <option value='zh/function.fputs.php'>Chinese (Simplified)</option>
+            <option value='fr/function.fputs.php'>French</option>
+            <option value='de/function.fputs.php'>German</option>
+            <option value='ja/function.fputs.php'>Japanese</option>
+            <option value='ro/function.fputs.php'>Romanian</option>
+            <option value='ru/function.fputs.php'>Russian</option>
+            <option value='es/function.fputs.php'>Spanish</option>
+            <option value='tr/function.fputs.php'>Turkish</option>
+            <option value="help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/function.fputs.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=function.fputs">Report a Bug</a>
+    </div>
+  </div><div id="function.fputs" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">fputs</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">fputs</span> &mdash; <span class="dc-title">Alias of <span class="function"><a href="function.fwrite.php" class="function">fwrite()</a></span></span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.fputs-description">
+  <h3 class="title">Description</h3>
+  <p class="simpara">
+   This function is an alias of: 
+   <span class="function"><a href="function.fwrite.php" class="function">fwrite()</a></span>.
+  </p>
+ </div>
+
+
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="/manual/add-note.php?sect=function.fputs&amp;redirect=https://www.php.net/manual/en/function.fputs.php"><img src='/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">2 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="8946">  <div class="votes">
+    <div id="Vu8946">
+    <a href="/manual/vote-note.php?id=8946&amp;page=function.fputs&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd8946">
+    <a href="/manual/vote-note.php?id=8946&amp;page=function.fputs&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V8946" title="53% like this...">
+    3
+    </div>
+  </div>
+  <a href="#8946" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#8946"> &para;</a><div class="date" title="2000-10-08 12:07"><strong>19 years ago</strong></div>
+  <div class="text" id="Hcom8946">
+<div class="phpcode"><code><span class="html">
+You can use here-documents in PHP but not for printing to a file pointer.<br /><br />There's a lot to say on them so just go to the page: <a href="http://www.php.net/manual/language.types.string.php" rel="nofollow" target="_blank">http://www.php.net/manual/language.types.string.php</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="27044">  <div class="votes">
+    <div id="Vu27044">
+    <a href="/manual/vote-note.php?id=27044&amp;page=function.fputs&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd27044">
+    <a href="/manual/vote-note.php?id=27044&amp;page=function.fputs&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V27044" title="48% like this...">
+    -2
+    </div>
+  </div>
+  <a href="#27044" class="name">
+  <strong class="user"><em>rembert at floating-point dot nl</em></strong></a><a class="genanchor" href="#27044"> &para;</a><div class="date" title="2002-11-21 04:03"><strong>17 years ago</strong></div>
+  <div class="text" id="Hcom27044">
+<div class="phpcode"><code><span class="html">
+Adding to Adam (Nedstat):<br />fputs without the length parm just writes all data up to but not including the first 0 byte it encounters. <br /><br />Therefore fputs($fp,"hello\0world") will only write hello to $fp whereas<br />fputs($fp,"hello\0world",11) will write both words.<br /><br />If this doesn't make sense for you, remember strings are always terminated with that 0 byte. Binary data doesn't have such a terminator byte as a 0 byte can be a completely valid piece of data therefore you always need to know the length of the binary datapart.<br /><br />BTW strlen() is binary safe, so you can use that to get the length of the binary data part as well - this is different from C which counts the number of chars up to the 0 byte. So the example above could also be written as:<br /><br />fputs($fp,"hello\0world",strlen("hello\0world"))</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="/manual/add-note.php?sect=function.fputs&amp;redirect=https://www.php.net/manual/en/function.fputs.php"><img src='/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="ref.filesystem.php">Filesystem Functions</a>
+
+                                    <ul class='child-menu-list'>
+
+                                                <li class="">
+                            <a href="function.basename.php" title="basename">basename</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.chgrp.php" title="chgrp">chgrp</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.chmod.php" title="chmod">chmod</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.chown.php" title="chown">chown</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.clearstatcache.php" title="clearstatcache">clearstatcache</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.copy.php" title="copy">copy</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.delete.php" title="delete">delete</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.dirname.php" title="dirname">dirname</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.disk-free-space.php" title="disk_&#8203;free_&#8203;space">disk_&#8203;free_&#8203;space</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.disk-total-space.php" title="disk_&#8203;total_&#8203;space">disk_&#8203;total_&#8203;space</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.diskfreespace.php" title="diskfreespace">diskfreespace</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fclose.php" title="fclose">fclose</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.feof.php" title="feof">feof</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fflush.php" title="fflush">fflush</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fgetc.php" title="fgetc">fgetc</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fgetcsv.php" title="fgetcsv">fgetcsv</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fgets.php" title="fgets">fgets</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fgetss.php" title="fgetss">fgetss</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.file-exists.php" title="file_&#8203;exists">file_&#8203;exists</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.file-get-contents.php" title="file_&#8203;get_&#8203;contents">file_&#8203;get_&#8203;contents</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.file-put-contents.php" title="file_&#8203;put_&#8203;contents">file_&#8203;put_&#8203;contents</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.file.php" title="file">file</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fileatime.php" title="fileatime">fileatime</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.filectime.php" title="filectime">filectime</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.filegroup.php" title="filegroup">filegroup</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fileinode.php" title="fileinode">fileinode</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.filemtime.php" title="filemtime">filemtime</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fileowner.php" title="fileowner">fileowner</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fileperms.php" title="fileperms">fileperms</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.filesize.php" title="filesize">filesize</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.filetype.php" title="filetype">filetype</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.flock.php" title="flock">flock</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fnmatch.php" title="fnmatch">fnmatch</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fopen.php" title="fopen">fopen</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fpassthru.php" title="fpassthru">fpassthru</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fputcsv.php" title="fputcsv">fputcsv</a>
+                        </li>
+                                                <li class="current">
+                            <a href="function.fputs.php" title="fputs">fputs</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fread.php" title="fread">fread</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fscanf.php" title="fscanf">fscanf</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fseek.php" title="fseek">fseek</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fstat.php" title="fstat">fstat</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.ftell.php" title="ftell">ftell</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.ftruncate.php" title="ftruncate">ftruncate</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.fwrite.php" title="fwrite">fwrite</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.glob.php" title="glob">glob</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-dir.php" title="is_&#8203;dir">is_&#8203;dir</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-executable.php" title="is_&#8203;executable">is_&#8203;executable</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-file.php" title="is_&#8203;file">is_&#8203;file</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-link.php" title="is_&#8203;link">is_&#8203;link</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-readable.php" title="is_&#8203;readable">is_&#8203;readable</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-uploaded-file.php" title="is_&#8203;uploaded_&#8203;file">is_&#8203;uploaded_&#8203;file</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-writable.php" title="is_&#8203;writable">is_&#8203;writable</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.is-writeable.php" title="is_&#8203;writeable">is_&#8203;writeable</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.lchgrp.php" title="lchgrp">lchgrp</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.lchown.php" title="lchown">lchown</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.link.php" title="link">link</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.linkinfo.php" title="linkinfo">linkinfo</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.lstat.php" title="lstat">lstat</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.mkdir.php" title="mkdir">mkdir</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.move-uploaded-file.php" title="move_&#8203;uploaded_&#8203;file">move_&#8203;uploaded_&#8203;file</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.parse-ini-file.php" title="parse_&#8203;ini_&#8203;file">parse_&#8203;ini_&#8203;file</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.parse-ini-string.php" title="parse_&#8203;ini_&#8203;string">parse_&#8203;ini_&#8203;string</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.pathinfo.php" title="pathinfo">pathinfo</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.pclose.php" title="pclose">pclose</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.popen.php" title="popen">popen</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.readfile.php" title="readfile">readfile</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.readlink.php" title="readlink">readlink</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.realpath-cache-get.php" title="realpath_&#8203;cache_&#8203;get">realpath_&#8203;cache_&#8203;get</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.realpath-cache-size.php" title="realpath_&#8203;cache_&#8203;size">realpath_&#8203;cache_&#8203;size</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.realpath.php" title="realpath">realpath</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.rename.php" title="rename">rename</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.rewind.php" title="rewind">rewind</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.rmdir.php" title="rmdir">rmdir</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.set-file-buffer.php" title="set_&#8203;file_&#8203;buffer">set_&#8203;file_&#8203;buffer</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.stat.php" title="stat">stat</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.symlink.php" title="symlink">symlink</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.tempnam.php" title="tempnam">tempnam</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.tmpfile.php" title="tmpfile">tmpfile</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.touch.php" title="touch">touch</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.umask.php" title="umask">umask</a>
+                        </li>
+                                                <li class="">
+                            <a href="function.unlink.php" title="unlink">unlink</a>
+                        </li>
+                        
+                    </ul>
+                
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="/copyright.php">Copyright &copy; 2001-2020 The PHP Group</a></li>
+        <li><a href="/my.php">My PHP.net</a></li>
+        <li><a href="/contact.php">Contact</a></li>
+        <li><a href="/sites.php">Other PHP.net sites</a></li>
+        <li><a href="/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script src="/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script src="/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script src="/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script src="/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script src="/cached.php?t=1539765004&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/images/to-top@2x.png"></a>
+
+</body>
+</html>

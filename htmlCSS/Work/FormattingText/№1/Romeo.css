@@ -1,0 +1,14 @@
+.r {
+    text-align: center;
+    color: rgba(48, 2, 134, 0.979);
+}
+.col {
+    color: rgb(150, 150, 150);
+}
+.ital {
+font-style: italic;
+font-size: 11px;
+}
+html{
+    background-color: rgb(255, 241, 202);
+}

@@ -1,0 +1,128 @@
+html {
+    background-color: rgb(255, 240, 223);
+}
+
+body {
+    height: 30rem;  /* высота блоков стала одинаковой*/
+    margin: 0 auto; 
+    margin-left: 15rem;
+    margin-top: 10rem;
+}
+
+
+.block {
+    width: 12rem;
+    height: 22.5rem;
+    float: left;
+    margin-left: 0.8rem; /* расстояние блоков друг от друга */
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 7px #555454;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition-duration: 0.3s; /*при от 0.4-1s блоки во время трансформации дёргаются*/
+}
+
+/* Устанавливаем цвета bordera для h3 в каждом блоке отдельно. Дефолтная нумерация блоков слево направо (:nth-child). */
+
+.block:first-child h3 {
+    border-bottom: 4px solid rgb(228, 87, 134);
+}
+
+.block:nth-child(2) h3 {
+    border-bottom: 4px solid orange;
+}
+
+.block:nth-child(3) h3 {
+    border-bottom: 4px solid rgb(76, 96, 154);
+}
+
+.block:last-child h3 {
+    border-bottom: 4px solid #82cd00;
+}
+
+h3 {
+    padding-bottom: 0.7rem;
+    padding-top: 0.7rem;
+    font-size: 1rem;
+}
+
+p:first-of-type {  /*задаёт стиль первого элемента <p> (c $) в группе братских элементов <p> 
+    (имеющих одного родителя class block) в каждом блоке.*/
+    font-size: 2.8rem;
+    margin-top: 1.1rem;
+    margin-bottom: 0;  /* значение 0, чтобы в селекторе p:nth-of-type(2) (см. ниже), второй <p> поднять выше margin-top: 0.4rem */
+}
+
+p:nth-of-type(2) { /*для вторых <p> (<p>per month</p>)*/
+    font-size: 1.1rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.4rem;
+    opacity: 0.25;
+}
+
+p:nth-of-type(3),
+p:nth-of-type(4),
+p:nth-of-type(5),
+p:nth-of-type(6) {
+    font-size: 0.8rem;  
+}
+
+button {
+    padding: 10px 32px; /* размер кнопки */
+    border-radius: 5px;
+    color: white;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Тут background для button в каждом блоке отдельно. */
+
+.block:first-child button {
+    background-color: rgb(228, 87, 134);
+}
+
+.block:nth-child(2) button {
+    background-color: orange;
+}
+
+.block:nth-child(3) button {
+    background-color: rgb(76, 96, 154);
+}
+
+.block:last-child button {
+    background-color: #82cd00;
+}
+
+/* Увеличение блоков по отдельности при наведении мыши на один из них */
+
+.block:first-child:hover {  
+    transform: scale(1.105);
+    padding-top: 1rem;
+    margin-top: -0.3rem;
+    padding-bottom: 1rem;
+
+} 
+
+.block:nth-child(2):hover { 
+    transform: scale(1.105);
+    padding-top: 1rem;
+    margin-top: -0.3rem;
+    padding-bottom: 1rem;
+   }
+   
+.block:nth-child(3):hover {
+    transform: scale(1.105);
+    padding-top: 1rem;
+    margin-top: -0.3rem;
+    padding-bottom: 1rem;
+   }
+   
+.block:last-child:hover {
+    transform: scale(1.105);
+    padding-top: 1rem;
+    margin-top: -0.3rem;
+    padding-bottom: 1rem; 
+   } 

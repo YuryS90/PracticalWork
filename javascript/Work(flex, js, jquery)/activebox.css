@@ -1,0 +1,802 @@
+body {
+    margin: 0;
+    font-family:'Raleway', sans-serif;
+    font-size: 14px;
+    color: #6c7279;
+
+    -webkit-font-smoothing: antialiased;
+
+    background-color: white;
+}
+
+*, *::before, *::after {  /*Для всех элементов*/
+    box-sizing: border-box; /*Это алгоритм подсчёта размера блоков с учётом padding-ов и границ. Т.е если будет размер блока 400рх
+    и padding по 20рх, то и блок останется 400рх, а контент в нём будет чуть меньше, потому что padding будет идти внутрь этого блока
+    Таким алгоритмом будет работать проще, не нужно просчитывать размер блока с учётом padding. Т.е блок останется 400рх внезависимости 
+    от внутренних отсутупов (padding)
+    Если будем использовать стандартный алгоритм подсчёта, то если прописать размер блока 400рх и padding 20рх: блок станет 440рх.  */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+/* ===========================================container=========================================== */
+
+.container {
+    width: 100%; /*Ширина блока 100%, но максимальная ширина 1170рх. Это конструкция юудет предназначена для адаптации под мобилу
+    Размер блока не фиксированный, а резиновый. Блок будет на весь экран, имея максимальную ширину 1170, если разрешение 
+    экрана станет меньше 1170, то блок будет занимать 100% ширину экрана */
+    max-width: 1200px; /*За счёт padding: 0 15px, ширина контента будет 1170рх (1200 - 15 - 15)*/
+    margin: 0 auto;
+
+    padding: 0 15px; /*При уменьшени экрана, граница браузера НЕ БУДЕТ плотно прилегать до самого контента*/
+}
+
+/* ===========================================header=========================================== */
+
+.header {  /*Шапку делаем поверх intro. Для этого header не влаживаем в intro, а далаем отдельно*/
+    width: 100%;
+    height: 100px;
+    position: absolute;  /*Как бы второй слой над intro*/
+    top: 0;
+    left: 0;
+    z-index: 1000;  
+}
+
+.header.fixed {  /* jquery */
+    position: fixed;
+
+    height: auto;
+
+    background-color: #444444;
+}
+
+.header.fixed .header__inner { /* jquery */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    border-bottom: 0;
+
+    height: 70px;
+}
+
+.header__inner {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c4c6d8;
+    padding: 35px 0;
+}
+
+/* ===========================================nav=========================================== */
+
+.nav {
+    display: flex;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.nav__link {
+    margin-left: 50px;
+    color: white;
+    text-decoration: none;
+    opacity: .74;
+    transition: opacity .1s linear; /*Плавное изменение*/
+}
+
+.nav__link:first-child {
+    margin-left: 0;
+}
+
+.nav__link:hover {
+    opacity: 1;
+}
+
+/* ===========================================Burger=========================================== */
+
+.burger {
+    padding: 15px 0;
+
+    display: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.burger__item {
+    display: block;
+    width: 28px; /*Средняя полоска*/
+    height: 3px;
+
+    background-color: #fff;
+
+    font-size: 0;  /*Типо убираем слово Menu*/
+    color: transparent; /*Делаем Menu прозрачным*/
+    
+
+    position: relative;
+}
+
+.burger__item::before, .burger__item::after {
+    content: "";
+    /*width: 100%;  Или же 30рх */
+    
+    height: 100%; /* Или же 3рх */
+
+    background-color: #fff;
+
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.burger__item::before {
+    width: 30px; /*Верхняя полоска*/
+    top: -8px;
+}
+
+.burger__item::after {
+    width: 27px; /*Нижняяполоска*/
+    bottom: -8px; 
+}
+
+/* ===========================================Intro=========================================== */
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 760px;
+    padding-top: 100px;
+    background: #969696 url("images/fon.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.intro__inner {
+    width: 100%;
+    max-width: 970px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    margin: 0 0 30px;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 65px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.intro__subtitle {
+    font-size: 22px;
+    color: white;
+    line-height: 1.5;  /*1.5=33px, 1=22px 0.5 = 11*/
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+/* ===========================================Button=========================================== */
+
+.btn {
+    display: inline-block;  /*чтобы могли задавать padding: сверху, снизу и т.д - внутренни отступы кнопки */
+    vertical-align: top; /*выравнивание по вертикальной границе по верху*/
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: background-color .1s linear; /*Плавное изменение*/
+}
+
+.btn--long {
+    min-width: 280px;
+}
+
+.btn--red {
+    background-color: #e84545;
+}
+
+.btn--red:hover {
+    background-color: #a12a2a;
+}
+
+/* ===========================================Features=========================================== */
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+
+.features__item {
+    width: 33.33333%;
+    padding: 0 30px;
+    margin: 25px 0;   /* В сумме отступов сверху и снизу получилось 125 */
+
+    text-align: center;
+}
+
+.features__icon {
+    margin-bottom: 25px;
+}
+
+.features__title {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.features__text {
+    font-size: 14px;
+    line-height: 1.5; /* = 21px */
+    color: #6c7279;
+}
+
+/* ===========================================Works=========================================== */
+
+.works {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.works__item {
+    width: 25%;
+    height: 350px;
+
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.works__item:hover .works__content {
+    opacity: 1;
+}
+
+.works__photo {
+    min-width: 100%;  /* Если картинка будет меньше ширины блока, то она растянется*/
+    position: absolute;
+    top: 50%;  /* Выравниваем по центру относительно блока works__item*/
+    left: 50%; /* Выравниваем по центру относительно блока works__item*/
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0); /* Выравнивание по осям:x y z*/
+}
+
+.works__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    opacity: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(232, 69, 69, .9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /*works__content будет поверх блока works__photo */
+
+    transition: opacity .1s linear; /*Плавное изменение*/
+}
+
+.works__title {
+    margin-bottom: 5px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.works__text {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* ===========================================TEAM=========================================== */
+
+.team {
+    margin: 100px 0 70px; /*70 + .team__item margin-bottom: 30px = 100px*/
+}
+
+.team__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0 -15px; /*ЧТобы крайние фотки начинались от самого края 1170рх (знач. равное padding: 0 15px;) */
+}
+
+.team__item {
+    width: 25%; 
+
+    padding: 0 15px;   /* В сумме отступ между тимэйтами 30рх (слева 15 и справа 15)*/
+    margin-bottom: 30px; /* Если будет больше участников, которые сместятся на след строку*/
+}
+
+.team__photo { 
+    display: block;  /*Чтобы фотографии при любом разрешении экрана были равны 25%. Т.е при ширине 1170рх: 25% - это, например, 300рх,
+    а при ширине 900рх: 25% - ширина фотографии, условно 200рх. Ширина и высота будут уменьшаться пропорционально*/
+    max-width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+}
+
+.team__name {
+    margin-bottom: 8px;
+
+    font-size: 22px;
+    color: #2d3033;
+}
+
+.team__prof {
+    margin-bottom: 15px;
+
+    font-size: 13px;
+    color: #e84545;
+    text-transform: uppercase;
+}
+
+.team__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #6c7279;
+    margin-bottom: 20px;
+}
+
+/* ===========================================Social=========================================== */
+
+.social {
+    display: flex;
+}
+
+.social--footer {
+    justify-content: center;
+}
+
+.social__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #e8ecee;
+
+    margin-left: 4px;
+
+    transition: background-color .1s linear;
+}
+
+.social--footer .social__item {
+    background-color: transparent;
+    border-width: 2px;
+    border-color: #fff;
+    border-radius: 2px;
+}
+
+.social__item:hover {  /* Изменяется цвет всего item*/
+    background-color: #e8ecee;
+}
+
+.social__item:hover .social__icon { /* Изменяется только цвет иконки*/
+    fill: #072aee;
+}
+
+
+.social__icon {
+    display: block;
+    height: 20px;
+    fill: #cbcbdf;
+
+    transition: fill .1s linear;
+}
+
+.social--footer .social__icon {
+    fill: #fff;
+}
+
+.social--footer .social__icon:hover {
+    fill: black;
+}
+
+/*==================================================Testimonials========================================================*/
+
+.testimonials {
+    background-color: #53354a;
+    overflow: hidden; /* Если картинки будут большими (больше высоты 500px), то они не вылезут за пределы границ  */
+
+}
+
+.testimonials__slider {
+    height: 500px; /*При перезагрузке страницы слайдер не прыгает  */
+    overflow: hidden; /*При перезагрузке страницы слайдер не прыгает  */
+}
+/* Свойство height: 500px в testimonials__slider нужно тогда, когда слайдер прогрузился, после чего 500рх ненужны 
+и когда слайдер прогужается выдаётся класс slick-initialized, где с его помощью мы переопределяем высоту (для мобильной версии)
+Вывод: когда у класса .testimonials__slider появляется класс slick-initialized применяется свойство height: auto  */
+.testimonials__slider.slick-initialized {
+    height: auto;
+}
+
+.testimonials__item {
+    display: flex;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+}
+
+.testimonials__photo {
+    width: 50%;
+    height: 500px;
+    position: relative;
+}
+
+.testimonials__img {
+    position: absolute;
+    right: 0;
+    top: 50%; /*Идеальное выравнивание по центру по вертикали, потому что, если картинка будет больше 500рх по высоте, 
+    больше самого блока, то она будет ровно отцентрована*/
+    z-index: 1;
+
+    transform: translateY(-50%);/*Идеальное выравнивание по центру по вертикали, потому что, если картинка будет больше 500рх по высоте, 
+    больше самого блока, то она будет ровно отцентрована*/
+}
+
+.testimonials__content {
+    width: 50%;
+    padding-left: 80px;
+    align-self: center;
+}
+
+.testimonials__text {
+    margin-bottom: 25px;
+
+    font-family: "Cardo", sans-serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.testimonials__author {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.slick-dots { /* размещение точек в слайдере из js */
+    display: flex;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0 0 10px;
+    list-style: none;
+
+    width: 50%;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+
+}
+
+.slick-dots li {
+    margin: 0 5px;
+
+}
+
+.slick-dots button {
+    width: 15px;
+    height: 15px;
+    padding: 0;
+
+    background: #fff;
+    border-radius: 50%;
+    border: 0;
+    opacity: 0.5; /* если кнопка не активна, то полупрозрачный кружок*/
+    cursor: pointer;
+
+    font-size: 0;
+    color: transparent; /* скрывает текст текста */
+}
+
+.slick-dots button:focus {
+    outline: 0;
+}
+
+.slick-dots .slick-active button {
+    opacity: 1; /* если кнопка активна, то непрозрачный кружок*/
+}
+
+/*==================================================Download========================================================*/
+
+.download {
+margin: 90px 0;
+text-align: center;
+}
+
+.download__title {
+margin-bottom: 10px;
+
+font-size: 28px;
+color: #2d3033;
+font-weight: 300;
+}
+
+.download__text {
+margin-bottom: 30px;
+
+font-size: 13px;
+color: #2d3033;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+/* ===========================================FOOTER=========================================== */
+
+.footer {
+    background-color: #3a3e64;
+}
+
+.footer__inner {
+    padding: 70px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer__block {
+    width: 33.33333%;
+    padding: 0 15px;
+
+    text-align: center;
+}
+
+.footer__title {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer_address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .5);
+}
+
+.footer__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .5);
+}
+
+/* ===========================================copyright=========================================== */
+
+.copyright {
+    padding: 20px 0;
+    background-color: #313454;
+}
+
+.copyright__text {
+    text-align: center;
+    font-size: 14px;
+    color: #808080;
+    line-height: 1.5;
+}
+
+.copyright__text span {
+    color: #fff;
+}
+
+/* ===========================================media=========================================== */
+
+@media screen and (max-width: 1300px) {
+
+}
+
+@media screen and (max-width: 991px) {
+
+    /* ============header===========*/
+
+    .nav {
+        display: none; 
+
+        width: 100%;
+
+        flex-direction: column;
+
+        background-color: #969696;
+
+        text-align: right;
+
+        position: absolute;/* относительно шапки и поместим в позицию r0 top100   */
+        right: 0;
+        top: 100%; /* Относительно heeader */
+    }
+
+    .nav.show {
+        display: flex;
+
+    }
+
+     .nav__link {  /*Расстояние между пунктов меню*/
+        padding: 9px 15px;
+    }
+
+    .burger {
+        display: block;
+        color: #fff;
+    }
+
+    /* ============intro===========*/
+
+    .intro__title {
+        font-size: 40px;
+    }
+
+    /* ============features===========*/
+
+    .features__item {
+        width: 50%;
+    }
+
+    /* ============works===========*/
+
+    .works__item {
+        width: 50%;
+    }
+
+    /* ============team===========*/
+    .team__item {
+        width: 50%;
+
+        text-align: center;
+    }
+
+    .team__photo {
+        margin-left: auto;  /*Отцентровали по центру*/
+        margin-right: auto;
+    }
+
+    /* ============social===========*/
+    .social {
+        justify-content: center;
+    }
+
+    /* ============testimonials===========*/
+    .testimonials__photo {
+        width: 100%;
+    }
+
+    .testimonials__content {
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 40px;
+    }
+
+    .testimonials__img {
+        right: -15px; /* Убрали отступ, чтобы картинка была на всю ширину */
+        min-width: 991px;  /*Картинка имеет ширину 950рх, а при свойстве и значении min-width: 991px - она растянется*/
+    }
+
+    .testimonials__text {
+        margin-top: 40px;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+    /* ============intro===========*/
+
+    .intro {
+        height: auto;  /*Убираем фиксированную высоту, чтобы высота адаптировалась под контент */
+        padding-top: 130px;
+        padding-bottom: 30px;
+    }
+
+    .intro__title {
+        font-size: 30px;
+    }
+
+    .intro__subtitle {
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+
+    /* ============features===========*/
+
+    .features {
+        margin: 35px 0;
+    }
+
+    .features__item {
+        width: 100%;
+        padding-left: 0;  /*ДЛя меньших размеров данные отступы убираем для более ровного дизайна*/
+        padding-right: 0;
+    }
+
+    /* ============works===========*/
+
+    .works__item {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* ============team===========*/
+    .team {
+        margin: 60px 0 30px;
+
+    }
+
+    .team__item {
+        width: 100%;
+    } 
+
+    /* ============testimonials===========*/
+
+    .testimonials__text {
+        font-size: 25px;
+    }
+
+    /* ============button===========*/
+    .btn--long {
+        min-width: 240px;
+    }
+
+    /* ============download===========*/
+    .download {
+        margin: 50px 0;
+    }
+
+    /* ============footer===========*/
+    .footer__block {
+        width: 100%;
+        margin-bottom: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .footer__block:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer__inner {
+        padding: 30px 0;
+    }
+
+}

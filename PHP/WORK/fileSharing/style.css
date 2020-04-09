@@ -1,0 +1,39 @@
+ul li {
+    list-style-type: none;
+    padding-top: 10px;
+}
+
+.file {
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.size {
+    font-size: 14px;
+    color: red;
+}
+
+ul li a {
+    font-size: 20px;
+}
+
+body, html {
+    background-color: rgb(248, 244, 193);
+}
+
+
+.cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.cont .fi {
+    width: 320px;
+}
+
+ul li img:last-child {
+    margin-right: 10px;
+}
+

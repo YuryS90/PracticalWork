@@ -1,0 +1,144 @@
+html {
+    background-color: rgb(252, 241, 228);
+}
+
+/* первый блок (block1) и его два подблока (ЛЕВЫЙ и ПРАВЫЙ)*/
+#block1 {
+    position: absolute;
+    left: 300px;/* расположение блока */
+    top: 30px;/* расположение блока */
+    width: 700px;/* размер блока в ширину*/
+    height: 200px;/* размер блока в высоту*/
+}
+
+#hello1 {
+    position: absolute;
+    left: 0; /* расположение ЛЕВОГО ПОДблока слева */
+    top: 0;/* расположение ЛЕВОГО ПОДблока  */
+    width: 350px;/* размер ЛЕВОГО ПОДблока в ширину*/
+    height: 200px;/* размер  ЛЕВОГО ПОДблока в высоту*/
+}
+
+.he1 {
+    position: absolute;
+    left: 120px;/* расположение контента в ЛЕВОМ ПОДблоке  */
+    top: 80px;/* расположение контента в ЛЕВОМ ПОДблоке  */
+}
+
+#bug1,
+img {
+    position: absolute;
+    width: 350px; /* размер ПРАВОГО ПОДблока и его контента в ширину*/
+    height: 200px;/* размер ПРАВОГО ПОДблока и его контента в высоту*/
+    top: 0;/* расположение ПРАВОГО ПОДБЛОКА и его контента   */
+    right: 0;/* расположение ПРАВОГО ПОДБЛОКА и его контента  справа */
+}
+
+#block1:hover #bug1 img {
+    transform: scale(1.7); /* при наведении курсора на блок увеличивается масштаб на 1.7 за 1 сек*/
+    transition-duration: 1s;
+}
+
+#block1:hover #bug1 {
+    overflow: hidden; /*При наведении курсора на блок данное значение hidden не даёт выйти картинки за область заданных размеров.*/
+}
+
+#block1:hover { /* При наведении курсора на блок меняется прозрачность backgroundа и контента на 0.6, в течении 0.3сек */
+    opacity: 0.6; 
+    background-color: rgba(0, 0, 0, 0.185);
+    transition-duration: 0.3s;
+}
+
+/* Второй блок. Меняется расположение подблоков справа налево  */
+#block2 {
+    position: absolute;
+    left: 300px;
+    top: 230px;
+    width: 700px;
+    height: 200px;
+}
+
+#hello2 {
+    position: absolute;
+    right: 0;/* расположение ЛЕВОГО ПОДблока уже справа */
+    top: 0;
+    width: 350px;
+    height: 200px;
+}
+
+.he2 {
+    position: absolute;
+    right: 120px;
+    top: 80px;
+}
+
+#bug2,
+img {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    top: 0;
+    left: 0;/* расположение ПРАВОГО ПОДблока уже слева */
+}
+
+#block2:hover #bug2 img {
+    transition-duration: 1s;
+    transform: scale(1.5);
+}
+
+#block2:hover #bug2 {
+    overflow: hidden;
+}
+
+#block2:hover {
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.185);
+    transition-duration: 0.3s;
+}
+
+/* Третий блок. Аналог первого.*/
+#block3 {
+    position: absolute;
+    left: 300px;
+    top: 430px;
+    width: 700px;
+    height: 200px;
+}
+
+#hello3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 350px;
+    height: 200px;
+}
+
+.he3 {
+    position: absolute;
+    left: 120px;
+    top: 80px;
+}
+
+#bug3,
+img {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    top: 0;
+    right: 0;
+}
+
+#block3:hover #bug3 img {
+    transition-duration: 1s;
+    transform: scale(1.5);
+}
+
+#block3:hover #bug3 {
+    overflow: hidden;
+}
+
+#block3:hover {
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.185);
+    transition-duration: 0.3s;
+}

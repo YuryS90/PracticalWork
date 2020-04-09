@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Прогресс-бар</title>
+    <style>
+        html {
+            background-color: rgb(252, 241, 213);
+        }
+
+        .bar {
+            width: 800px;
+            height: 150px;
+            position: absolute;
+            left: 100px;
+            top: 70px;
+            border: 4px solid orange;
+        }
+
+        .load {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 0px;       /* расположение загрузки с левого края */
+            top: 0px;          /* расположение загрузки с левого края */
+            background-color: orange;
+            animation-name: go;    /* произвольное имя, которое в дальнейшем указывается в @keyframes */
+            animation-iteration-count: infinite; /* infinite - анимация проигрывается бесконечно */
+            animation-duration: 3s; /*в течении 3сек  анимация проходит 653рх*/
+            animation-direction: normal;  /*значения:initial, normal, inherit, unset конкретизирует проигрывание анимации СЛЕВА НАПРАВО за счёт родителя translateX*/
+            animation-timing-function: linear; /*linear - анимация проходит линейно, т.е без всяких замедлений и ускорений*/
+        }
+
+        @keyframes go { /*Проигрываем анимацию*/
+            100% {
+                transform: translateX(653px); /*Само направление анимации по оси Х*/
+                }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="load"></div>
+    </div>
+</body>
+</html>

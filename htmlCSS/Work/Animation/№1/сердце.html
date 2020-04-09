@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>СЕРДЦЕ</title>
+    <style>
+        html {
+            background-color: rgb(252, 241, 228);
+        }
+
+        #favorites {
+            left: 500px;
+            top: 100px;
+            position: absolute;
+        }
+
+        #favorites,
+        img {
+            transform: scale(0.7);
+            filter: grayscale(100%);/* grayscale - % оттенка серого касающегося только изображения */
+        }
+
+        #favorites:hover,
+        img {  
+            transform: scale(1.2);
+            transition-duration: 5s;
+            filter: grayscale(0%);  
+        }
+    </style>
+</head>
+
+<body>
+    <div id="favorites">
+        <img src="icons/favorites.png" alt="">
+    </div>
+</body>
+
+</html>

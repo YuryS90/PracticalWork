@@ -1,0 +1,84 @@
+html {
+    background-color: rgb(255, 240, 223);
+}
+
+body {
+    margin: 0 auto; 
+    font-family: sans-serif; 
+    height: 1200px;    
+}
+
+.menu {
+    float: left;  
+    background-color: #888585; 
+    position: fixed;  /* при прокрутке контента меню остаётся на месте*/
+    height: 100%; /* background удленился на конца экрана за счёт значения в body height: 1200px */
+    text-align: center; 
+}
+
+.content {
+    float: left; 
+    width: 80%;  
+    margin-left: 170px; 
+    margin-top: 55px; 
+} 
+
+ul {
+    list-style-type: none; 
+    color: white;  
+    padding: 0;  
+}
+
+
+.div1 {
+    float: left;    
+}
+
+img {
+    width: 35.4%;  /*уменьшили размер картинок */
+} 
+
+/*1. Если делать по заданию: меню ПЛАВНО раскрывается/закрывается (за 1 сек) на полную ширину, то сначала для .div2 применяем width: 0,
+который уберёт div2, а в конце для .menu:hover .div2 применяем width: 140px + transition-duration: 1s. Итог: плавное раскрытие. 
+2. Если делать, чтобы меню БЫСТРО раскрывалось и закрывалось, то сначала для .div2 применяем display: none +  width: 140px, 
+а в конце для .menu:hover .div2 прим. display: block */
+
+.div2 {
+    float: left; 
+    width: 0;  
+    text-align: left; 
+    margin-top: 7px; /* div2 выравнился относительно центра картинок*/ 
+    padding-left: 10px; /* div2 отдалился от картинок вправо*/
+    transition-duration: 1s;
+} 
+
+.minicont {
+    height: 60px; /* регулировка толщины затемнения (background) при наводке мыши на пункты + отступы между li */
+    padding-top: 30px;  /*отступы между li + регулировка толщины затемнения (background) при наводке мыши на пункты*/
+    overflow: hidden; /*После того как убрали мышку с меню, div2 вернулся в исходное положение вместе с пунктами */ 
+} 
+
+ul li:first-child { /*ФОрматирование при закрытом меню. После того, как уменьшил ширину li (в Инспекторе ширина обозначена 
+    голубым цветом) до 70px, можно было выравнить MENU ближе к середине, относительно картинок (padding-left: 18px) */
+    margin-top: -5px;  
+    margin-bottom: -20px;
+    width: 60px;  
+    padding-left: 18px;
+}
+
+.menu:hover .div2 {
+    width: 140px;   
+    transition-duration: 1s;   
+} 
+
+.minicont:hover {
+    background-color: rgb(39, 38, 38); /*затемнение при наводке мыши на пункты */
+} 
+
+#notbackground:hover {
+    background-color: #888585;  /* ТИПА отмена затемнения при наводке мыши на MENU */
+}  
+
+h1 {
+    font-size: 1.5rem;
+} 

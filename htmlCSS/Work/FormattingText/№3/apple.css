@@ -1,0 +1,48 @@
+html {
+    background-color: rgb(252, 241, 228);
+}
+
+div {
+    background-color: lightpink;
+    color: white;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 40px;
+    font-family: cursive;
+}
+
+.pad {
+    background-color: #d3838ff5;
+    margin-bottom: 20px;        /*отступы между  пунктами  */
+    margin-top: 20px;
+    margin-right: 45px;           /* background нумерации и текста становиться длиней или короче  */
+    margin-left: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;           /*в каждом пункте делает толще background */
+    
+    
+}
+
+
+li {
+    list-style-type: none;   /* Свойства от 28 строки по 38 - нумерация будет в  background  */
+}
+
+ol {
+    counter-reset: list;
+}
+
+ol li::before {
+    counter-increment: list;
+    content: counter(list) ". ";
+    margin-left: 30px;              /* подвигает нумерацию и текст вправо */
+}
+
+span {
+    padding: 15.5px;                /* меняет толщину background текста    */
+    background-color: #cb6474f5;
+    margin-left: 15px;              /* подвигает только текст вправо   */
+    padding-right: 40px;
+    padding-left: 35px;
+}

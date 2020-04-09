@@ -1,0 +1,30 @@
+body {
+    background-color: wheat;
+    margin: 0 auto;
+}
+
+table {
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.doska tr:nth-child(odd) td:nth-child(even),
+.doska tr:nth-child(even) td:nth-child(odd) {
+    background-color: black;
+
+    width: 50px;
+    height: 50px;
+
+}
+
+.doska tr:nth-child(odd) td:nth-child(odd),
+.doska tr:nth-child(even) td:nth-child(even) {
+    background-color: #fff;
+
+    width: 50px;
+    height: 50px;
+}
+
+
+

@@ -1,0 +1,39 @@
+.card::before {
+content: "\2663";
+font-size: 100px;
+background-color: rgb(134, 134, 134);
+
+}
+.card1::before {
+    content: "\2665";
+    color: red;
+    font-size: 100px;
+    background-color: rgb(134, 134, 134);
+}
+.card2::before {
+    content: "\2666";
+    color: red;
+    font-size: 100px;
+    background-color: rgb(134, 134, 134);
+}
+.card3::before {
+    content: "\2660";
+    font-size: 100px;
+    background-color: rgb(134, 134, 134);
+}
+.cardred {
+    color: red;
+    font-size: 100px;
+    background-color: rgb(134, 134, 134);
+}
+.big {
+    font-size: 60px;
+}
+.big1 {
+    font-size: 100px;
+    background-color: rgb(134, 134, 134);
+
+}
+html{
+    background-color: moccasin;
+}

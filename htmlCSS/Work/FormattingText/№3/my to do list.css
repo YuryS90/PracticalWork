@@ -1,0 +1,70 @@
+html {
+    background-color: rgb(252, 241, 228);
+}
+
+div {
+    font-size: 20px;
+    margin: 40px;
+    font-family: cursive;
+}
+
+p {
+    margin-left: 340px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 300px;     
+    margin-right: 300px;   /* left, right сделал заливку (background) всего списка короче */
+    padding-top: 10px;
+    padding-bottom: 10px;      /* top, bottom - каждый список стал толще  */
+}
+
+ul {
+    counter-reset: list;
+}
+
+ul li::before {
+    counter-increment: list;
+    content: url(icons/unchecked_16.png) " ";
+    margin-left: 40px; 
+
+ } /* от li до ul li::before - это нужно было для того, чтобы маркер был в backgroundе */
+
+li:nth-child(odd) {
+    background-color: rgb(148, 197, 218);
+
+ }  /* цвет изменяется по нечётному списку */
+
+li:nth-child(even) {
+    background-color: rgb(174, 228, 252);
+
+}  /* цвет изменяется по чётному списку */
+
+#back {
+    background-color: rgb(226, 226, 226);
+} /* Если задать CLASS (.back), а не ID (#back) как в моем случае, ТО background НЕ ПРИМЕНИТСЯ. 
+      */
+
+li#back::before {
+    content: url(icons/checked_16.png) " ";
+
+ } /* задал маркер для ОТДЕЛЬНЫХ 3-х списков */
+
+.decor {
+    text-decoration: line-through;
+    padding-left: 20px;
+}
+
+.pad {
+    padding-left: 20px;
+}
+
+.red {
+    color: rgb(122, 0, 0);
+    padding-left: 40px;
+}
+

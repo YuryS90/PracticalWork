@@ -1,0 +1,72 @@
+html {
+    background-color: rgb(252, 241, 228);
+}
+
+.hasy {
+    /* Круг для часов */
+    position: absolute;
+    width: 300px;
+    /* задаётся ширина будущего квадрата */
+    height: 300px;
+    /*задаётся высота будущего квадрата*/
+    margin: 5em;
+    /* само расположение фигуры   */
+    border: 2px solid #48d1cc;
+    /* линии для квадрата */
+    border-radius: 50%;
+    /* убирает углы квадрата делая его кругом  */
+}
+
+.minut {
+    /* Минутная стрелка */
+    position: absolute;
+    /*Позиционируем относительно .hasy */
+    width: 4px;
+    /* Толщина стрелки */
+    height: 105px;
+    /* Длина стрелки */
+    left: 153px;
+    /*Положение стрелки*/
+    top: 48px;
+    background: #24C0BA;
+    animation: nev 10s infinite steps(1600);
+    /* Скорость и движение стрелки */
+    transform-origin: 0 106px;
+    /* Точка относительно которой вращается стрелка */
+}
+
+.has {
+    position: absolute;
+    width: 4px;
+    height: 92px;
+    left: 153px;
+    top: 60px;
+    background: #48d1cc;
+    animation: nov 270s infinite steps(43200);
+    transform-origin: 0 90px;
+}
+
+@keyframes nev {
+    100% {
+        transform: rotate(360deg);
+        /* Стрелка делает полный круг */
+    }
+}
+
+@keyframes nov {
+    100% {
+        transform: rotate(360deg);
+        /* Стрелка делает полный круг */
+    }
+}
+
+.sentr { 
+    /* Центр циферблата */
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 150px;
+    left: 148px;
+    background: #009B95;
+}

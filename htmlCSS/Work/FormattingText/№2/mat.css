@@ -1,0 +1,33 @@
+html {
+    background-color: rgb(247, 244, 240);
+}
+
+h1 {
+    text-align: center;
+}
+
+.formul {
+    text-align: center;
+}
+
+.back {
+    background-color: rgb(255, 154, 154);
+    padding: 7px;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.red {
+    color: rgb(129, 41, 41);
+    font-style: italic;
+    font-weight: bolder;
+}
+
+body {
+    font-family: serif;
+    margin: 0% 22.6%;
+}
+
+h1 {
+    font-size: 30px;
+}

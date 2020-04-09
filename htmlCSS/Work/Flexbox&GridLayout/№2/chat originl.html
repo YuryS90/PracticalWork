@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+    <style>
+        html {
+            background-color: rgb(255, 240, 220);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ===========================================container=========================================== */
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 15px;
+        }
+
+        /* ===========================================chat=========================================== */
+
+        .chat {
+            display: flex;
+            flex-wrap: wrap;
+
+            margin: 50px 0;
+        }
+
+        /* ===========================================chat__item========================================= */
+
+        .chat__item {
+            width: 100%;
+
+            padding: 0 10px;
+            margin: 8px 0;
+
+            text-align: center;
+
+        }
+
+        /* =========================================item__block====================================== */
+        /* block__box + block__message + block__zero*/
+
+        .item__block {
+            display: flex;
+            justify-content: center;   
+        }
+
+        /* ======================================block__======================== */
+
+        .block__box {
+            width: 33.33333%;
+
+            display: flex;   
+        }
+
+        .block--right {
+            justify-content: flex-end;
+        }
+
+        .block__message {
+            width: 33.33333%;
+
+            text-align: left;
+
+            padding-left: 15px;
+            padding-right: 20px;
+        }
+
+        .block__message p {
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        .message--red {
+            background-color: rgb(233, 140, 140);
+
+            border-radius: 25px 25px 25px 0; 
+        }
+
+        .message--blue {
+            background-color: rgb(140, 177, 233);
+
+            border-radius: 25px 25px 0 25px; 
+        }
+
+        .block__zero {
+            width: 33.33333%;
+        }
+
+        .block__switch {
+            order: 1;
+        }
+
+        /* =========================================box__obertka====================================== */
+
+        .box__obertka {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;   
+        }
+
+        .box__switch {
+            order: 1;
+        }
+
+        .obertka__hours {
+            font-size: 0.8rem;
+            opacity: 0.4;
+        }
+
+        .obertka--left {
+            text-align: left;
+        }
+
+        .obertka--right {
+            text-align: right;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="chat">
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__box block--right">
+                        <div class="box__obertka">
+                            <div class="obertka__name obertka--right">Anie Smith</div>
+                            <div class="obertka__hours obertka--right">4 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_2.png"></div>
+                    </div>
+
+                    <div class="block__message message--red">
+                        <p>Ut in enim scelerisque, pharetra velit id, maximus nunc</p>
+                    </div>
+
+                    <div class="block__zero"></div>
+                </div> <!-- /.item__block (1)  -->
+            </div> <!-- /.chat__item (1)  -->
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__zero"></div>
+
+                    <div class="block__box block__switch">
+                        <div class="box__obertka box__switch">
+                            <div class="obertka__name obertka--left">Jack Silverston</div>
+                            <div class="obertka__hours obertka--left">4 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_1.png"></div>
+                    </div>
+
+                    <div class="block__message message--blue">
+                        <p>Fusce auctor nibh at consequat efficitur</p>
+                    </div>
+                </div> <!-- /.item__block (2)  -->
+            </div> <!-- /.chat__item (2)  -->
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__box block--right">
+                        <div class="box__obertka">
+                            <div class="obertka__name obertka--right">Anie Smith</div>
+                            <div class="obertka__hours obertka--right">4 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_2.png"></div>
+                    </div>
+
+                    <div class="block__message message--red">
+                        <p>Etiam lacinia velit id venenatis sodales</p>
+                    </div>
+
+                    <div class="block__zero"></div>
+                </div> <!-- /.item__block (3)  -->
+            </div> <!-- /.chat__item (3)  -->
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__zero"></div>
+
+                    <div class="block__box block__switch">
+                        <div class="box__obertka box__switch">
+                            <div class="obertka__name obertka--left">Jack Silverston</div>
+                            <div class="obertka__hours obertka--left">3 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_1.png"></div>
+                    </div>
+
+                    <div class="block__message message--blue">
+                        <p>Mauris ac mi quis ante dignissim tempus in non nulla</p>
+                    </div>
+                </div> <!-- /.item__block (4)  -->
+            </div> <!-- /.chat__item (4)  -->
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__box block--right">
+                        <div class="box__obertka">
+                            <div class="obertka__name obertka--right">Anie Smith</div>
+                            <div class="obertka__hours obertka--right">3 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_2.png"></div>
+                    </div>
+
+                    <div class="block__message message--red">
+                        <p>Fusce quis ex fringilla, conque diam vel, sodales tortor</p>
+                    </div>
+
+                    <div class="block__zero"></div>
+                </div> <!-- /.item__block (5)  -->
+            </div> <!-- /.chat__item (5)  -->
+
+            <div class="chat__item">
+                <div class="item__block">
+
+                    <div class="block__zero"></div>
+
+                    <div class="block__box block__switch">
+                        <div class="box__obertka box__switch">
+                            <div class="obertka__name obertka--left">Jack Silverston</div>
+                            <div class="obertka__hours obertka--left">2 hours ago</div>
+                        </div>
+                        <div class="box__ava"><img src="icons/avatar_1.png"></div>
+                    </div>
+
+                    <div class="block__message message--blue">
+                        <p>Curabitur quis dolor eger elit pulvinar sollicitudin</p>
+                    </div>
+                </div> <!-- /.item__block (6)  -->
+            </div> <!-- /.chat__item (6)  -->
+
+        </div> <!-- /.chat  -->
+    </div> <!-- /.container  -->
+</body>
+
+</html>

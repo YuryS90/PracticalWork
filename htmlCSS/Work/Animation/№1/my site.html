@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My site</title>
+    <style>
+        html {
+            background-color: rgb(252, 241, 228);
+        }
+
+        body {
+            overflow: hidden; /* убран скрол, кот появлялся во время анимации */
+        }
+
+        /* ШАГ 1. Делаем ПОЗИЦИИ всех элеменитов "ГИБКИМИ" при помощи position: absolute;.Все элементы наложились друг на друга слева.
+        В дальнейшем все элементы будем подгонять left-aми и top-ами.*/
+        /* ШАГ 2. По заданию необходимо, чтобы картинки при загрузке страницы выезжали снизу экрана. 
+        Подгоняем их left-aми и top-ами как указано в задании. */
+        /* ШАГ 2.1. Подгоняем все картинки свойством left на одинаковом расстоянии (180px) друг от друга.
+        /* ШАГ 2.2. Подгоняем их по высоте (top), как указано в задании. Эти все значения (top) внесём только в @keyframes, т.к 
+        это КОНЕЧНОЕ РАСПОЛОЖЕНИЕ картинок.*/
+        /* ШАГ 3. Подгоняем все картинки в ИСХОДНОЕ положение (чтобы анимация получилась логически). Каждую картинку смещаем вниз за пределы 
+        экрана (top:720px), left-ы не трогаем, т.к они являются осями по которым будут двигаться картинки.*/
+        
+        .hello {
+            position: absolute;
+            margin-top: 60px;
+            left: 37%;
+            top: 8%;
+        }
+
+        .icons {
+            position: absolute;
+            left: 17%;
+        }
+
+
+        #calc {
+            position: absolute;
+            top: 720px;  /* ИСХОДНОЕ положение - за пределом экрана*/
+            left: 100px;   /* Картинка будет двигаться от левой стороны в 100px (ось) */
+            animation-name: calc;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 0.5s;
+            width: 120px;
+        }
+
+        #book {
+            position: absolute;
+            top: 720px;
+            left: 280px;
+            animation-name: book;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 1.0s;
+            width: 150px;
+  
+        }
+
+        #paper {
+            position: absolute;
+            top: 720px;
+            left: 460px;
+            animation-name: paper;
+            animation-duration: 2s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+            width: 150px;
+ 
+        }
+
+        #pallete {
+            position: absolute;
+            top: 720px;
+            left: 640px;
+            animation-name: pallete;
+            animation-delay: 2.0s;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            transform: rotateZ(180deg);
+            width: 120px;
+
+        }
+
+        #pencil {
+            position: absolute;
+            top: 680px;
+            left: 470px;
+            animation-name: pencil;
+            transform: rotate(90deg); /* перевернули карандаш как в задании */
+            animation-delay: 2.5s;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            margin-left: -90px;
+            width: 120px;
+            
+        }
+
+        @keyframes calc {  /* селектор from указывать ненужно, т.к. для него уже указаны эти значения в селекторах-картинок (top и left). Мол чтобы не повторять по 100раз одно и тоже*/
+            
+            to { 
+                top: 400px;  /* значение КОНЕЧНОГО РАСПОЛОЖЕНИЯ картинки-калькулятора.*/
+                transform: rotateZ(-30deg); 
+            }
+        }
+
+        @keyframes book {
+
+            to {
+                top: 315px;
+                transform: rotateZ(-10deg);
+            }
+        }
+
+        @keyframes paper {
+
+            to {
+                top: 315px;
+                transform: rotateZ(10deg);
+            }
+        }
+
+        @keyframes pallete {
+
+            to {
+                top: 400px;
+                transform: rotateZ(210deg);
+            }
+        }
+
+        @keyframes pencil {
+
+            to {
+                top: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ov">
+
+        <div class="hello">
+            <h1>HELLO, MY SITE!</h1>
+        </div>
+        <div class="icons">
+            <img src="icons/calc.png" alt="calc" id="calc">
+            <img src="icons/book.png" alt="book" id="book">
+            <img src="icons/paper.png" alt="paper" id="paper">
+            <img src="icons/pallete.png" alt="pallete" id="pallete">
+            <img src="icons/pencil.png" alt="pencil" id="pencil">
+        </div>
+    </div>
+
+</body>
+
+</html>

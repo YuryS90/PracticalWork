@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DASHBOARD</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .div1 {
+            background-color: #444444;
+        }
+
+        .div1 img {
+            width: 50px; /* Ширина (размер) картинки */
+            margin: 0 auto; /* Выравнивание по центру вместе с display: block*/
+            display: block;
+            padding-top: 14px;
+        }
+
+        ul {
+            list-style-type: none;
+            counter-reset: list;
+        }
+
+        ul li::before {
+            counter-increment: list;
+            content: " ";
+            margin-left: 40px;
+        }
+
+        ul {
+            font-family: sans-serif;
+            color: white;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-bottom: 15px;
+            padding-top: 15px;
+            border-bottom: 1px solid black;
+        }
+
+        ul li:first-child { /* Псевдокласс :first-child применяет стилевое оформление к первому дочернему элементу своего родителя. */
+            border-top: 1px solid black;
+        }
+
+        .div2 {
+            background-color: #e8e5e5;
+            margin-top: -30px; /*Сомкнул друг с другом div1 и div2*/
+            padding-bottom: 1px;
+        }
+
+        h1 {
+            font-size: 25px;
+            padding-top: 30px;
+            padding-left: 40px;
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        h3 {
+            font-size: 17px;
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+
+        .traffic,
+        .loads {
+            overflow: hidden;  /*контент не выходит за границу своего контейнера во время изменения разрешения экрана*/
+            width: auto; /* значение auto даёт контенту адаптироваться под ширину и высоту */
+            height: auto;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 40px;
+            background-color: #f9f3e6;
+        }
+
+        .traffic img,
+        .loads img { /*размер картинок + выравнивание по центру*/
+            width: 220px;
+            margin: auto;
+            display: block;
+        }
+
+        .table {
+            overflow: hidden;
+            width: auto;
+            height: auto;
+            background-color: #f9f3e6;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding-bottom: 35px;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            margin-left: 52px;
+            text-align: left;
+            padding-right: 0;
+        }
+
+        table thead tr th,
+        table tbody tr td {
+            padding: 15px 4px 15px 18px;
+        }
+
+        @media screen and (min-width:600px) {
+
+            body {
+                font-family: sans-serif;
+                height: 700px;
+            }
+
+            .div1 {
+                width: 20%;
+                float: left;
+                font-size: 14px;
+                height: 919px;
+                margin-top: -8px;
+                margin-left: -8px;
+            }
+
+            .div1 img {
+                width: 90px;
+            }
+
+            ul li:first-child {
+                border-top: 1px solid rgb(49, 49, 49);
+            }
+
+            .div1 ul li {
+                margin-left: -16px;
+                padding: 40px 0px;
+            }
+
+            h1 {
+                padding-top: 20px;
+                font-size: 20px;
+                padding-left: 20px;
+                padding-bottom: 15px;
+            }
+
+            .div2 {
+                float: left;
+                width: 80%;
+                height: 940px;
+            }
+
+            h3 {
+                padding-top: 20px;
+                font-size: 14px;
+                padding-left: 32px;
+            }
+
+            .traffic {
+                overflow: hidden;
+                float: left;
+                width: 43%;
+                margin-left: 20px;
+                margin-right: 25px;
+            }
+
+            .loads {
+                overflow: hidden;
+                float: left;
+                width: 43%;
+                margin-left: 5px;
+                margin-right: 10px;
+            }
+
+            .traffic,
+            .loads {
+                height: 35%;
+            }
+
+            .traffic img,
+            .loads img {
+                width: 220px;
+                margin-top: 65px;
+            }
+
+            .table {
+                width: 95%;
+                height: auto;
+                margin: 0 20px;
+                float: left;
+                margin-top: 15px;
+            }
+
+            table {
+                width: 90%;
+            }
+
+            table thead tr th,
+            table tbody tr td {
+                padding: 15px 0 15px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <img src="images/logo.png" alt="">
+        <ul>
+            <li>DASHBOARD</li>
+            <li>USERS</li>
+            <li>FILE MANAGER</li>
+            <li>POSTS</li>
+            <li>EVENTS</li>
+        </ul>
+    </div>
+    <div class="div2">
+        <h1>Dashboard - May 25, 2019</h1>
+        <div class="traffic">
+            <h3>TRAFFIC</h3>
+            <img src="images/chart1.png" alt="">
+        </div>
+        <div class="loads">
+            <h3>LOADS</h3>
+            <img src="images/chart2.png" alt="">
+        </div>
+        <div class="table">
+            <h3>RECENT ACTIVITY</h3>
+            <table border="1" bordercolor="#e5e5e5" rules="rows" frame="below">  <!--border только между строчек-->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Etiam eu erat sit amet nisi eleifend aliquam</td>
+                        <td>Phoebe Britton</td>
+                        <td>25/05/19</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ut maximus lacus ut ante tristique, et rutrum leo eleifend</td>
+                        <td>Rosina Clay</td>
+                        <td>25/05/19</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Donec eget ligula sed diam pharetra sodales eget a metus</td>
+                        <td>Ayush Horn</td>
+                        <td>24/05/19</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Curabitur bibendum odio in velit pretium luctus</td>
+                        <td>Jillian Carver</td>
+                        <td>23/05/19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

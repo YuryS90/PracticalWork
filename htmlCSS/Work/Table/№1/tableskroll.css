@@ -1,0 +1,55 @@
+html {
+    background-color: rgb(255, 247, 236);
+}
+
+body {
+    margin-top: 40px;
+    margin-left: 40px;
+    font-family: serif;
+    text-align: center; /* числа выровнены по центру относительно шапки таблицы */
+}
+
+table {  
+    border-collapse: collapse; /*Значение collapse убирает в таблице двойные линии. Таблица получилась "Слитной"*/
+}  
+
+tbody tr td:first-child {    /*стили для первого дочернего элемента (самого первого td) своего родителя (tr).*/
+    background-color: #6cd2ef;
+    font-weight: bold;
+    position: sticky; /*position: sticky + left: 0px, при прокрутке страницы вправо первый столбец прибивается к левому краю страницы*/
+    left: 0px;  
+}
+
+ tr td {
+    padding: 25px 35px;
+    font-size: 1.8rem;
+}
+
+tbody tr:nth-child(odd) { /* nth-child используется для добавления стиля к элементам на основе нумерации в дереве элементов. 
+    (odd) описывает элементы с нечётными номерами */
+    background-color: rgb(233, 231, 231);
+}
+
+
+thead tr th {
+    padding: 15px 45px;
+    background-color: #6cd2ef;
+    font-size: 1.9rem;
+    position: sticky;  /*position: sticky + top: 0px, при прокрутке страницы вниз заголовок таблицы прибивается к верху страницы*/
+    top: 0px; 
+}
+
+tr th:first-child {  /*пустое поле при прокрутке страницы вправо или вниз прячет заполненые поля первого столбца или
+     заполненые поля заголовка таблицы*/
+    z-index: 1;
+    position: sticky; /*position: sticky + left: 0px + top: 0 - для обоих условиях*/ 
+    left: 0; 
+    top: 0; 
+}   
+
+
+
+
+
+
+

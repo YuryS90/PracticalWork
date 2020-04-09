@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: coral;
+            align-items: center;
+
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input {
+            border: none;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .login-form {
+            padding: 1rem;
+            background-color: #eee;
+            font-size: 0.75rem;
+        }
+
+        .login-form h3 {
+            margin-top: 0.25rem;
+        }
+
+        .login-form input {
+            text-align: center;
+        }
+
+        .social, .social input {
+            color: white;
+        }
+
+        .social input {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        .social p {
+            margin: 0.5rem 0;
+        }
+
+        #fb, #tw {
+            width: 45%;
+            padding: 0.5rem;
+            display: flex;
+        }
+
+        #fb {
+            background-color: cornflowerblue;
+            font-size: 0.75rem;
+        }
+
+        #tw {
+            background-color: turquoise;
+            font-size: 0.75rem;
+        }
+
+        #fb {
+            padding-left: 0;
+        }
+        
+        #tw {
+            padding-right: 0;
+        }
+
+        #psw {
+            
+            margin: 0.5rem 0;
+        }
+
+        #subm {
+            background-color: greenyellow;
+            color: white;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-form a {
+            color: coral;
+            text-decoration: none;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <form method="GET">
+        <input type="text" autocomplete="off" name="username">
+        <input type="password" name="psw">
+        <input type="date" name="date">
+        <input type="checkbox" name="isTrue">
+        
+        <div>
+            Male <input type="radio" name="gender" value="Male">
+            Female <input type="radio" name="gender" value="Female">
+        </div>
+        
+        <input type="color" name="color">
+        <input type="email" name="email">
+
+        <textarea name="textarea" cols="30" rows="10"></textarea>
+        <div>
+            Country
+            <select name="country">
+                <option value="1">USA</option>
+                <option value="Belarus">Belarus</option>
+
+            </select>
+        </div>
+        
+
+        <input type="submit" value="Log In">
+
+        <!-- LOGIN FORM -->
+        <div class="login-form">
+            <h3>Member Login</h3>
+            <div>
+                <label for="username">USERNAME</label>
+                <input required="true" id="username" type="text" name="username"  placeholder="Username">
+            </div>
+            <div>
+                <input id="psw" type="password" name="password" placeholder="Password">
+            </div>
+            <div>
+                <input id="subm" type="submit" value="Login">
+            </div>
+            <a href="#">Forgot password?</a>
+        </div>
+
+        <!-- Social log in -->
+        <div class="social">
+            <p>... or log in with:</p>
+            <div class="btn-container">
+                <div id="fb">
+                    <img src="" alt="f">Facebook
+                </div>
+                <div id="tw">
+                        <img src="" alt="tw">Twitter
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+
+</html>

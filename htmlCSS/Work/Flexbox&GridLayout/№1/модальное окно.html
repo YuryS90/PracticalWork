@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MODAL WINDOW</title>
+    <style>
+        body {
+            margin: 0;
+            min-width: 520px; /* Меньше чем до отметки в 520рх: текст сжиматься не будет, при уменьшении разрешения браузера. */
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .lor {
+            margin: 3rem 5rem; 
+            font-size: 1.4rem;
+        }
+
+        h3 {
+            font-size: 2.3rem;
+        }
+
+        .container { /* Нужно чтобы .container, в котором  модальное окно, был на первом плане относительно текста  */
+            position: fixed; /*Ш1 - .container перестал быть блочным или открепился от текста.*/
+            top: 0;  /*Ш2 - Свойство position позицианируется только с помошью свойств: top, left, bottom, right. 
+            В данном случае, top, прописывается для того чтобы потом отцентрировать .container flex-ами ровно по-центру*/
+            background-color: rgba(0, 0, 0, 0.5);  /*Ш3.1 - делаем фон .container тёмным и прозрачным */
+            height: 100%; /*Ш6 (Ш6-7) указали размер .containerа, где, благодаря background-ом-color: rgba(0, 0, 0, 0.5), они видны */
+            width: 100%; /*Ш7*/
+            display: flex; /*Ш8*/ 
+            justify-content: center; /*Ш8.1 Цетрирование .containerа по главной оси*/ 
+            align-items: center;   /*Ш8.2 Цетрирование .containerа по второстепенной оси*/  
+        }
+
+        .window-modal {  /*Форматирование модального окна*/
+            background-color: white; /*Ш3.2 - делаем фон .model белым */
+            padding: 1.5rem; /*Ш3.3 (отступы для наглядности)*/
+            /*margin: 0.1rem; Ш3.4 (отступы для наглядности)*/
+            width: 25%; /*Ш4 (Ш4-5) указали внутри .containerа РАЗМЕРЫ модального окна, где, благодаря background-color: white, они видны*/
+            height: 35%; /*Ш5*/
+            border-radius: 20px;
+            min-width: 300px;
+            overflow: hidden;   
+        }
+
+
+        .content {
+            background-color: rgb(252, 246, 239);
+            margin: -0.7rem;
+            padding-left: 0.8rem;
+            padding-right: 0.8rem;
+            padding-top: 0.5rem;
+            padding-bottom: 1rem;
+            min-width: 300px;    
+        }
+
+        .content h4 {
+            border-bottom: 1px solid black;
+            padding-bottom: 1rem;
+            margin: 0 auto; 
+            font-weight: normal;
+            font-size: 1.1rem;
+        }
+
+        .x {
+           text-align: right;
+           margin: 0;
+           font-size: 1.5rem;
+           font-weight: bolder;
+        }
+
+        .text {
+            margin: 0;
+            padding-top: 1rem;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lor">
+        <h3>What is Lorem ipsum?</h3>
+        <p><span>Lorem ipsum</span> dolor sit amet consectetur adipisicing elit. Quibusdam dicta, quos eius possimus corporis aliquid
+            architecto tenetur delectus impedit, enim nam maxime veniam consequatur dolor incidunt nulla eaque voluptate
+            natus!
+            Laudantium dolore porro aspernatur sed odit? Nisi neque sunt delectus vero laborum aspernatur est, excepturi
+            porro consectetur dolorem, libero harum earum, tempora temporibus voluptatem illo doloremque distinctio
+            dicta
+            alias quidem.
+            Libero voluptatum repellat neque itaque. Hic omnis sapiente at ex corrupti officiis dolor similique.
+            Explicabo
+            fuga voluptatum, veritatis ex, facilis quod velit minus, aperiam architecto officia vero quidem nesciunt.
+            Officiis?
+        </p>
+        <h3>Where does it come pampampam</h3>
+        <p> Est saepe quasi consectetur ex maxime, accusantium expedita ad. Iure, tenetur similique voluptates
+            temporibus
+            amet possimus neque sed, alias blanditiis odit molestiae saepe deleniti, eligendi perferendis eos. Eum,
+            perspiciatis odio.
+            Rem voluptate ullam id laboriosam voluptatibus ab ut voluptas nobis et fugiat veniam sequi consectetur
+            soluta
+            atque nemo, alias minus sit? Eligendi alias voluptatem incidunt repellendus nesciunt ducimus id sapiente!
+            Sapiente doloremque eveniet praesentium, officia nesciunt ducimus tenetur adipisci non eaque reprehenderit
+            dolorum ut at quaerat explicabo laborum dolore esse dolorem ex est? Aliquid hic itaque autem neque dolorem
+            quidem.
+            Provident cumque quas facere, aspernatur earum asperiores quibusdam, ullam tenetur fugit unde aliquid eos
+            molestiae consequatur tempora deleniti quos consequuntur nesciunt saepe eum officiis esse rem, cupiditate
+            in!
+            Repellat, esse.
+            Aperiam fuga id illum officia labore quaerat! Voluptate necessitatibus nam ipsa, dicta sunt minima veritatis
+            expedita tenetur dolore suscipit officia. Maiores veniam dicta perferendis quisquam quae voluptatem quis
+            consectetur aperiam!
+        </p>
+        <p>Excepturi, odit nostrum. Inventore, eaque. Molestiae at debitis qui porro pariatur in cupiditate alias? Culpa
+            ad
+            quo blanditiis ullam sequi. Saepe ex repellat illo id quos perspiciatis rerum quam suscipit.
+            Praesentium vero, suscipit eius totam ullam tenetur necessitatibus, blanditiis nisi distinctio culpa ipsam
+            fugit
+            quaerat magni quia facere expedita voluptate nihil itaque. Aspernatur sequi facere quo dolores voluptatibus
+            ad
+            quaerat?
+        </p>
+    </div>
+    <div class="container">
+        <div class="window-modal">
+            <div class="content">
+                <p class="x">&times;</p>
+                <h4>MODAL WINDOW</h4>
+                <p class="text">Provident cumque quas facere, aspernatur earum asperiores quibusdam, ullam tenetur fugit unde aliquid eos
+                molestiae consequatur tempora deleniti quos consequuntur nesciunt saepe eum officiis esse rem,
+                cupiditate in!
+                Repellat, esse. Est saepe quasi consectetur ex maxime, accusantium expedita ad. Iure, tenetur similique
+                voluptates
+                temporibus
+                amet possimus neque sed, alias blanditiis odit molestiae saepe deleniti, eligendi perferendis eos. Eum,
+                perspiciatis odio.
+               </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+html {
+    background-color: rgb(247, 243, 243);
+}
+
+#actions {
+    border-radius: 7px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+#plans {
+    border-radius: 7px;
+}
+
+.div1 {
+    background-color: rgb(26, 55, 144);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 7px 7px 0 0;
+    color: white;
+    padding-left: 10px;
+}
+
+.div2 {
+    background-color: rgb(200, 214, 255);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgb(135, 150, 197);
+}
+
+.div3 {
+    background-color: rgb(200, 214, 255);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    border-bottom: 1px solid rgb(135, 150, 197);
+}
+
+.div31 {
+    background-color: rgb(200, 214, 255);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 0 0 7px 7px;
+    padding-left: 10px;
+}
+
+.div4 {
+    background-color: rgb(200, 214, 255);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 0 0 7px 7px;
+    padding-left: 10px;
+}
+
+.div2,
+.div3,
+.div31,
+.div4 {
+    color: rgb(91, 108, 165);
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    #plans {
+        float: right;
+        width: 45%;
+        margin-top: 50px;
+    }
+
+    #actions {
+        float: left;
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #content {
+        width: 65%;
+        float: left;
+    }
+
+    #table {
+        width: 35%;
+        float: right;
+    }
+
+    #actions {
+        float: none;
+        width: 80%;
+        margin-left: 50px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    #plans {
+        float: none;
+        width: 80%;
+        margin-left: 50px;
+        margin-top: 8px;
+    }
+
+}
