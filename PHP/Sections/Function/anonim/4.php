@@ -1,4 +1,5 @@
 <?php
+// измеряем производительность
 function speed_test($fun, $arg, $n = 100000)
 {
 

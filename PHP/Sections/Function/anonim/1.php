@@ -1,4 +1,5 @@
 <?php
+// функция внутри переменной $a
 function my_fun($x) {
     return $x*$x;
 }
