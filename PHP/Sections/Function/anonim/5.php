@@ -8,6 +8,8 @@ $a2 = array_map(function ($x) {
 }, $a1);
 print_r($a2);
 
+
+// тоже самое только через foreach
 $a3 = [];
 foreach ($a1 as $value) {
     $a3[] = $value * $value;
