@@ -16,17 +16,18 @@ function speed_test($fun, $arg, $n = 100000)
 
 $a1 = array(1, -2, 3, 4, -5, 6, -7, -8, 9, 10);
 
-
-$a2 = array_filter($a1, function ($x) {
-    return $x > 0;
-});
-
+function testFilter($array)
+{
+    return array_filter($array, function ($x) {
+        return $x >= 0;
+    });
+}
 
 function testForeach($array)
 {
     $a = [];
     foreach ($array as $value) {
-        $a[] = $value > $value;
+        $a[] = $value >= $value;
     }
     return $a;
 };
@@ -36,7 +37,7 @@ function testFor($array)
 {
     $a = [];
     for ($i = 0; $i < count($array); $i++) {
-        $a[] = $array[$i] > $array[$i];
+        $a[] = $array[$i] >= $array[$i];
     }
     return $a;
 }
@@ -47,15 +48,15 @@ function testWhile($array)
     $a = [];
     $i = 0;
     while ($i < count($array)) {
-        $a[] = $array[$i] > $array[$i];
+        $a[] = $array[$i] >= $array[$i];
         $i++;
     }
     return $a;
 }
 
-echo speed_test('array_filter', $a1); // самый быстрый
+echo speed_test('testFilter', $a1); 
 echo "<br>";
-echo speed_test('testForeach', $a1);
+echo speed_test('testForeach', $a1); // самый быстрый
 echo "<br>";
 echo speed_test('testFor', $a1);
 echo "<br>";
