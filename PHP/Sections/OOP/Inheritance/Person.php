@@ -12,6 +12,6 @@ abstract class Person
 
     public function introduce()
     {
-        return "My name is $this->name $this->surname \n";
+        return "My name is $this->name $this->surname.\n";
     }
 }

@@ -4,11 +4,11 @@ class Engineer extends Student
 {
     public function work()
     {
-        return "I can work";
+        return "I can work. ";
     }
 
-    public function learn()
+    public function learn($subject)
     {
-        return parent::learn() . " very well";
+        return parent::learn($subject) . " very well";
     }
 }

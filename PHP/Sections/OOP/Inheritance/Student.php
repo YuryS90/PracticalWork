@@ -1,8 +1,8 @@
 <?php
 class Student extends Person
 {
-    public function learn()
+    public function learn($subject)
     {
-        return "I can learn";
+        return "I can learn $subject";
     }
 }
