@@ -21,15 +21,17 @@ class Tictac
         return $this;
     }
 
+    // инициализация игрового поля
     public function initMap(int $n)
     {
         $this->map = [];
 
-        for ($i = 0; $i < $n; $i++) {
+        for ($i = 0; $i < $n; $i++) {  // этот for перебирает строки
 
-            $row = [];
+            $row = []; // Это изначально пустая строка,
+            // которая будет заполняться элементами
 
-            for ($j = 0; $j < $n; $j++) {
+            for ($j = 0; $j < $n; $j++) { // этот for перебирает столбцы
                 $row[] = null;
             }
 
@@ -38,6 +40,7 @@ class Tictac
         return $this;
     }
 
+    // поставить крестик 
     public function putCross(int $i, int $j)
     {
         if ($this->available($i, $j)) {
@@ -46,6 +49,7 @@ class Tictac
         return $this;
     }
 
+    // поставить нолик
     public function putNull(int $i, int $j)
     {
         if ($this->available($i, $j)) {

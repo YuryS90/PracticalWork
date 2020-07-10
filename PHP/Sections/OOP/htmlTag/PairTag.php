@@ -10,9 +10,15 @@ abstract class PairTag extends Tag
         $this->setInnerText($text);
     }
 
-    public function setInnerText(string $text)
+    public function setInnerText(string $innerText)
     {
-        $this->innerText = $text;
+        $this->innerText = $innerText;
+        return $this;
+    }
+
+    public function addInnerText(string $innerText)
+    {
+        $this->innerText .= $innerText;
         return $this;
     }
 }
