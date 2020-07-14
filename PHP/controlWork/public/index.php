@@ -34,6 +34,8 @@ include "../vendor/autoload.php";
     if (!empty($_POST)) {
         echo (new Calc($_POST['a'], $_POST['b']))->{$_POST['op']}();
     } 
+
+    // (new Calc($_POST['a'], $_POST['b'])) - это объект
     ?>
 
     
