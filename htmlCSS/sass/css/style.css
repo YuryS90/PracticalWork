@@ -1,0 +1,19 @@
+html {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(blue), to(green));
+  background-image: -webkit-linear-gradient(blue, green);
+  background-image: -moz-linear-gradient(blue, green);
+  background-image: -o-linear-gradient(blue, green);
+  background-image: linear-gradient(blue, green);
+}
+
+.table {
+  width: 80px;
+}
+
+.table th {
+  background-color: green;
+}
+
+.table td {
+  background-color: blue;
+}

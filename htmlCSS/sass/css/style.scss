@@ -1,0 +1,20 @@
+$color: green;
+$px: 40px;
+
+html {
+    background-image: linear-gradient(blue, green);
+}
+
+
+.table {
+    
+    width: 2 * $px;
+    
+    th {
+        background-color: $color;
+    }
+
+    td {
+        background-color: blue;
+    }
+}
