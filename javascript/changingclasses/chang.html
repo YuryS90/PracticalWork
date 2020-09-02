@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form {
+        display: none;
+    }
+
+    /* .but {
+        display: block;
+    } */
+</style>
+
+<body>
+    <input type="button" value="Открой формочку" id="res2">
+    
+    <form action="" method="POST" id="res" class="form">
+        <input type="text" id="num1" value="5">
+        <input type="text" id="num2" value="3">
+        <input type="button" value="ok">
+    </form>
+
+    
+
+    <script>
+        // document.getElementById("MyElement").classList.add('MyClass');
+
+        // document.getElementById("MyElement").classList.remove('MyClass');
+
+       
+
+        document.getElementById("res2").onclick = function () {
+        //    if (document.getElementById("res").classList.contains('form')) // почему она тут не нужна
+
+            document.getElementById("res").classList.toggle('form');
+        }
+    </script>
+</body>
+
+</html>
