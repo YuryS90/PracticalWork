@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">0</div>
+    <script>
+        setInterval(function () {
+            let value = parseInt(document.getElementById("time").innerText)
+            document.getElementById("time").innerHTML = value < 100 ? value + 1 : "<b>" + value + "</b>";
+        }, 100)
+    </script>
+</body>
+</html>

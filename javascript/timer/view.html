@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data"></div>
+    <script>
+       setInterval(function () {
+           let xhr = new XMLHttpRequest();
+
+           xhr.open("POST", "server.php");
+           xhr.send();
+
+           xhr.onload = function () {
+               if(this.status == 200) {
+                   let obj = JSON.parse(this.response);
+
+                   str = ""
+                   for (const key of obj) {
+                       str += '<b>' + key.name + '</b>' + '<i>' + key.msg + '</i>';
+                   }
+
+                   document.getElementById('data').innerHTML = str
+               } else {
+                   console.log(this.statusText)
+               }
+           }
+       }, 100)
+    </script>
+</body>
+</html>

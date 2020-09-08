@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">0</div>
+    <script>
+        let value = 0
+       
+        timerPlus = setInterval(plus, 50)
+
+        function plus() {
+            document.getElementById("time").innerHTML = "<b>" + (++value) + "</b>"
+
+            if (value == 100) {
+                clearInterval(timerPlus)
+                timerMinus = setInterval(minus, 50)
+            }
+        }
+
+        function minus() {
+            document.getElementById("time").innerHTML = "<i>" + (--value) + "</i>"
+
+            if (value == 0) {
+                clearInterval(timerMinus)
+                timerPlus = setInterval(plus, 50)
+            }
+        }
+    </script>
+</body>
+</html>
